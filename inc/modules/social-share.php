@@ -376,7 +376,7 @@ function themify_render_share_bar() {
 	$position = 'right' === themify_get_option( 'share_position', 'left' ) ? 'right' : 'left';
 
 	echo '<div class="tf-share tf-share--' . esc_attr( $position ) . '" data-tf-share>';
-	echo '<div class="tf-share__items" aria-hidden="true">';
+	echo '<div class="tf-share__items">';
 
 	foreach ( themify_share_networks() as $slug => $net ) {
 		if ( ! themify_share_network_on( $net['key'] ) ) {

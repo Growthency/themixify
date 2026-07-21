@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $themify_permalink = get_permalink();
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'tf-card-post' ); ?>>
-	<a class="tf-card-post__thumb" href="<?php echo esc_url( $themify_permalink ); ?>" aria-hidden="true" tabindex="-1">
+	<a class="tf-card-post__thumb" href="<?php echo esc_url( $themify_permalink ); ?>" tabindex="-1" aria-label="<?php echo esc_attr( get_the_title() ); ?>">
 		<?php
 		if ( has_post_thumbnail() ) {
 			the_post_thumbnail(

@@ -559,8 +559,9 @@ function themify_render_featured_post() {
 	echo '<article class="tf-featured-post">';
 	if ( has_post_thumbnail() ) {
 		printf(
-			'<a class="tf-featured-post__thumb" href="%s" tabindex="-1" aria-hidden="true">%s</a>',
+			'<a class="tf-featured-post__thumb" href="%s" tabindex="-1" aria-label="%s">%s</a>',
 			esc_url( $link ),
+			esc_attr( get_the_title() ),
 			get_the_post_thumbnail( null, 'themify-hero', array( 'loading' => 'lazy', 'alt' => '' ) ) // phpcs:ignore WordPress.Security.EscapeOutput -- core markup.
 		);
 	}

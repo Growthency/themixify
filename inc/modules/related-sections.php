@@ -158,8 +158,9 @@ function themify_render_similar_posts() {
 		echo '<article class="tf-similar__card">';
 		if ( has_post_thumbnail( $sim ) ) {
 			printf(
-				'<a class="tf-similar__thumb" href="%s" tabindex="-1" aria-hidden="true">%s</a>',
+				'<a class="tf-similar__thumb" href="%s" tabindex="-1" aria-label="%s">%s</a>',
 				esc_url( get_permalink( $sim ) ),
+				esc_attr( get_the_title( $sim ) ),
 				get_the_post_thumbnail( $sim, 'themify-card', array( 'loading' => 'lazy', 'alt' => '' ) ) // phpcs:ignore WordPress.Security.EscapeOutput -- core markup.
 			);
 		}

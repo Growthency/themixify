@@ -104,7 +104,7 @@ function themify_render_post_list( array $posts, $numbered = false, $views = fal
 		$title = get_the_title( $p );
 		echo '<li class="tf-post-list__item">';
 
-		echo '<a class="tf-post-list__thumb" href="' . esc_url( $link ) . '" tabindex="-1" aria-hidden="true">';
+		echo '<a class="tf-post-list__thumb" href="' . esc_url( $link ) . '" tabindex="-1" aria-label="' . esc_attr( $title ) . '">';
 		if ( has_post_thumbnail( $p ) ) {
 			echo get_the_post_thumbnail( $p, 'themify-card', array( 'loading' => 'lazy', 'alt' => '' ) ); // phpcs:ignore WordPress.Security.EscapeOutput -- core markup, escaped attrs.
 		} else {
