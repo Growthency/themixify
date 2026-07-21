@@ -257,7 +257,11 @@ th { background: var(--tf-accent-bg); font-weight: 600; }
 @media (max-width: 600px) { .tf-slider__nav { display: none; } }
 
 /* ============================================================ 8. CARDS */
-.tf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--tf-gap); }
+/* Fixed column counts so rows always fill completely at any container width
+   (auto-fill used to add a 4th/5th column on wide layouts, leaving empty slots). */
+.tf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tf-gap); }
+@media (max-width: 1024px) { .tf-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .tf-grid { grid-template-columns: 1fr; } }
 .tf-card-post {
 	background: var(--tf-bg-card); border: 0; border-radius: var(--tf-radius);
 	overflow: hidden; box-shadow: var(--tf-shadow-sm);
@@ -309,7 +313,8 @@ th { background: var(--tf-accent-bg); font-weight: 600; }
 	background: var(--tf-accent); border-radius: 3px;
 }
 /* Category showcase cards — image/gradient background, name + count on top */
-.tf-cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: var(--tf-gap); }
+.tf-cat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--tf-gap); }
+@media (max-width: 900px) { .tf-cat-grid { grid-template-columns: repeat(2, 1fr); } }
 .tf-cat-card {
 	display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px;
 	text-align: center; min-height: 150px; padding: 24px 18px; border-radius: var(--tf-radius);
