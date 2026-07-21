@@ -1,0 +1,2559 @@
+# Translation template for the Themify WordPress theme.
+# Copyright (C) 2026 Themify.
+# This file is distributed under the same license as the Themify theme.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Themify 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-07-01 07:08+0000\n"
+"Language: \n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e;_x:1,2c;_ex:1,2c;esc_attr_x:1,2c;esc_html_x:1,2c;_n:1,2;_nx:1,2,4c\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:30
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:32
+msgid "Sorry, we could not find the page you were looking for. It may have moved, or the link might be broken. Try searching, or browse the latest posts below."
+msgstr ""
+
+#: 404.php:53
+#: 404.php:54
+msgid "Recent posts"
+msgstr ""
+
+#: 404.php:75
+msgid "Back to home"
+msgstr ""
+
+#: comments.php:28
+msgid "One comment"
+msgstr ""
+
+#: comments.php:32
+msgid "%s comment"
+msgid_plural "%s comments"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:53
+msgid "&lsaquo; Older comments"
+msgstr ""
+
+#: comments.php:54
+msgid "Newer comments &rsaquo;"
+msgstr ""
+
+#: comments.php:55
+msgid "Comments navigation"
+msgstr ""
+
+#: comments.php:62
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:70
+msgid "Leave a comment"
+msgstr ""
+
+#: comments.php:71
+msgid "Reply to %s"
+msgstr ""
+
+#: comments.php:72
+msgid "Cancel reply"
+msgstr ""
+
+#: comments.php:73
+msgid "Post comment"
+msgstr ""
+
+#: comments.php:75
+msgid "Your email address will not be published. Required fields are marked with an asterisk."
+msgstr ""
+
+#: footer.php:26
+msgid "&copy; %1$s %2$s"
+msgstr ""
+
+#: footer.php:38
+msgid "Back to top"
+msgstr ""
+
+#: header.php:26
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:30
+msgid "Primary"
+msgstr ""
+
+#: header.php:43
+msgid "Menu"
+msgstr ""
+
+#: inc/admin/admin-menu.php:50
+#: inc/admin/admin-menu.php:51
+msgid "Themify"
+msgstr ""
+
+#: inc/admin/admin-menu.php:62
+msgid "Themify Dashboard"
+msgstr ""
+
+#: inc/admin/admin-menu.php:63
+msgid "Dashboard"
+msgstr ""
+
+#: inc/admin/admin-menu.php:94
+msgid "Welcome to Themify"
+msgstr ""
+
+#: inc/admin/admin-menu.php:95
+msgid "Your all-in-one growth suite: analytics, indexing, rank tracking, SEO, affiliate tools and more — built into the theme."
+msgstr ""
+
+#: inc/admin/settings-api.php:170
+#: inc/modules/footer-builder.php:517
+#: inc/seo/seo-meta.php:446
+msgid "Choose"
+msgstr ""
+
+#: inc/admin/settings-api.php:230
+msgid "Settings saved."
+msgstr ""
+
+#: inc/admin/settings-api.php:261
+#: inc/modules/affiliate-links.php:920
+#: inc/modules/analytics.php:1001
+#: inc/modules/custom-css.php:348
+#: inc/modules/footer-builder.php:616
+#: inc/modules/homepage-builder.php:924
+#: inc/modules/rank-tracker.php:964
+#: inc/modules/script-injection.php:477
+#: inc/modules/theme-colors.php:268
+msgid "Save Changes"
+msgstr ""
+
+#: inc/helpers.php:200
+msgid "%s ago"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:463
+msgid "Learn more"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:589
+#: inc/modules/affiliate-links.php:590
+#: inc/modules/affiliate-links.php:609
+#: inc/modules/affiliate-links.php:813
+msgid "Affiliate Links"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:610
+msgid "Cloak, track & auto-nofollow links"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:728
+msgid "Label"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:733
+msgid "e.g. My favourite tool"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:739
+msgid "Slug"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:744
+msgid "e.g. best-widget (leave blank to derive from label)"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:750
+msgid "Target URL"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:755
+msgid "https://example.com/affiliate-offer"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:761
+msgid "Rel attributes"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:768
+msgid "Space-separated, e.g. nofollow sponsored noopener."
+msgstr ""
+
+#: inc/modules/affiliate-links.php:775
+msgid "Cloaked URL"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:784
+msgid "Copy"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:791
+msgid "%s click"
+msgid_plural "%s clicks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/affiliate-links.php:801
+msgid "Remove link"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:814
+msgid "Create clean, on-domain links that redirect to your affiliate offers, track their clicks, and auto-nofollow outbound links in your posts."
+msgstr ""
+
+#: inc/modules/affiliate-links.php:818
+msgid "Affiliate links saved."
+msgstr ""
+
+#: inc/modules/affiliate-links.php:834
+#: inc/modules/affiliate-links.php:887
+msgid "Links"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:839
+msgid "Total clicks"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:844
+msgid "Base path"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:853
+msgid "Settings"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:856
+msgid "Cloak base path"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:864
+msgid "Cloaked links look like %s. Changing this re-flushes permalinks automatically."
+msgstr ""
+
+#: inc/modules/affiliate-links.php:878
+msgid "Auto-add rel=\"nofollow sponsored noopener\" + open external post links in a new tab"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:880
+msgid "Applies to outbound links in your post content only. Internal links, mailto: and anchors are left untouched."
+msgstr ""
+
+#: inc/modules/affiliate-links.php:888
+msgid "Each link gets an on-domain URL that 302-redirects to the target and counts clicks. Use it anywhere, or with the [themify_link] / [themify_button] shortcodes."
+msgstr ""
+
+#: inc/modules/affiliate-links.php:906
+msgid "+ Add link"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:913
+msgid "Shortcodes"
+msgstr ""
+
+#: inc/modules/affiliate-links.php:915
+msgid "<code>[themify_button url=\"best-widget\" text=\"Buy now\"]</code> — a styled button. Pass a link <em>slug</em> to cloak &amp; track it, or any URL."
+msgstr ""
+
+#: inc/modules/affiliate-links.php:916
+msgid "<code>[themify_link slug=\"best-widget\" text=\"my pick\"]</code> — an inline cloaked link using the slug's stored rel."
+msgstr ""
+
+#: inc/modules/ai-writer.php:110
+msgid "Friendly"
+msgstr ""
+
+#: inc/modules/ai-writer.php:111
+msgid "Professional"
+msgstr ""
+
+#: inc/modules/ai-writer.php:112
+msgid "Persuasive"
+msgstr ""
+
+#: inc/modules/ai-writer.php:113
+msgid "Casual"
+msgstr ""
+
+#: inc/modules/ai-writer.php:125
+msgid "Short (~600 words)"
+msgstr ""
+
+#: inc/modules/ai-writer.php:126
+msgid "Medium (~1,200 words)"
+msgstr ""
+
+#: inc/modules/ai-writer.php:127
+msgid "Long (~2,000 words)"
+msgstr ""
+
+#: inc/modules/ai-writer.php:138
+#: inc/modules/ai-writer.php:139
+#: inc/modules/ai-writer.php:158
+#: inc/modules/ai-writer.php:213
+msgid "AI Writer"
+msgstr ""
+
+#: inc/modules/ai-writer.php:159
+msgid "Draft SEO articles with Claude"
+msgstr ""
+
+#: inc/modules/ai-writer.php:200
+msgid "AI Writer settings saved."
+msgstr ""
+
+#: inc/modules/ai-writer.php:214
+msgid "Generate complete, SEO-optimized blog drafts with Claude, then save them straight to your posts. Set your Anthropic API key once and start writing."
+msgstr ""
+
+#: inc/modules/ai-writer.php:230
+msgid "Connection"
+msgstr ""
+
+#: inc/modules/ai-writer.php:231
+msgid "Your key is stored on this site and used only to generate drafts from the admin. Get one at <a href=\"https://console.anthropic.com/\" target=\"_blank\" rel=\"noopener\">console.anthropic.com</a>."
+msgstr ""
+
+#: inc/modules/ai-writer.php:235
+msgid "Anthropic API key"
+msgstr ""
+
+#: inc/modules/ai-writer.php:239
+msgid "sk-ant-..."
+msgstr ""
+
+#: inc/modules/ai-writer.php:241
+msgid "Kept private. Never sent anywhere except Anthropic when you generate a draft."
+msgstr ""
+
+#: inc/modules/ai-writer.php:246
+msgid "Model"
+msgstr ""
+
+#: inc/modules/ai-writer.php:261
+msgid "Default category for new drafts"
+msgstr ""
+
+#: inc/modules/ai-writer.php:263
+msgid "— Uncategorized —"
+msgstr ""
+
+#: inc/modules/ai-writer.php:273
+msgid "Saved drafts are filed under this category."
+msgstr ""
+
+#: inc/modules/ai-writer.php:276
+msgid "Save settings"
+msgstr ""
+
+#: inc/modules/ai-writer.php:282
+msgid "Generate a draft"
+msgstr ""
+
+#: inc/modules/ai-writer.php:285
+msgid "Add your Anthropic API key above before generating a draft."
+msgstr ""
+
+#: inc/modules/ai-writer.php:287
+msgid "Describe what you want. Claude returns a full article in clean HTML that you can preview and save as a draft."
+msgstr ""
+
+#: inc/modules/ai-writer.php:292
+msgid "Topic or title"
+msgstr ""
+
+#: inc/modules/ai-writer.php:295
+msgid "e.g. The complete beginner’s guide to composting at home"
+msgstr ""
+
+#: inc/modules/ai-writer.php:301
+#: inc/seo/seo-meta.php:433
+msgid "Focus keyword"
+msgstr ""
+
+#: inc/modules/ai-writer.php:304
+msgid "e.g. home composting"
+msgstr ""
+
+#: inc/modules/ai-writer.php:306
+msgid "The primary phrase the article should rank for."
+msgstr ""
+
+#: inc/modules/ai-writer.php:311
+msgid "Tone"
+msgstr ""
+
+#: inc/modules/ai-writer.php:321
+msgid "Length"
+msgstr ""
+
+#: inc/modules/ai-writer.php:339
+msgid "Include an FAQ section"
+msgstr ""
+
+#: inc/modules/ai-writer.php:349
+msgid "Generating…"
+msgstr ""
+
+#: inc/modules/ai-writer.php:350
+msgid "Generate draft"
+msgstr ""
+
+#: inc/modules/ai-writer.php:412
+#: inc/modules/indexing.php:540
+#: inc/modules/seo-health.php:715
+msgid "You are not allowed to do this."
+msgstr ""
+
+#: inc/modules/ai-writer.php:441
+msgid "No Anthropic API key is configured. Add one in the Connection card above."
+msgstr ""
+
+#: inc/modules/ai-writer.php:450
+msgid "Please enter a topic or title to write about."
+msgstr ""
+
+#: inc/modules/ai-writer.php:455
+msgid "Please wait a few seconds before generating another draft."
+msgstr ""
+
+#: inc/modules/ai-writer.php:468
+msgid "Claude returned an empty article. Try again or adjust your topic."
+msgstr ""
+
+#: inc/modules/ai-writer.php:579
+msgid "Could not reach the Anthropic API: %s"
+msgstr ""
+
+#: inc/modules/ai-writer.php:605
+msgid "Claude returned no article text. Please try again."
+msgstr ""
+
+#: inc/modules/ai-writer.php:67
+msgid "Opus 4.8 (highest quality)"
+msgstr ""
+
+#: inc/modules/ai-writer.php:68
+msgid "Sonnet 5 (balanced)"
+msgstr ""
+
+#: inc/modules/ai-writer.php:69
+msgid "Haiku 4.5 (fastest)"
+msgstr ""
+
+#: inc/modules/ai-writer.php:693
+msgid "Authentication failed — check that your Anthropic API key is correct."
+msgstr ""
+
+#: inc/modules/ai-writer.php:695
+msgid "Access denied by Anthropic. Your API key may not have permission for this model."
+msgstr ""
+
+#: inc/modules/ai-writer.php:697
+msgid "The selected model was not found. Pick a different model in the Connection card."
+msgstr ""
+
+#: inc/modules/ai-writer.php:699
+msgid "Rate limited by Anthropic — you have sent too many requests. Wait a moment and try again."
+msgstr ""
+
+#: inc/modules/ai-writer.php:702
+msgid "The request was rejected: %s"
+msgstr ""
+
+#: inc/modules/ai-writer.php:703
+msgid "The request was rejected by Anthropic. Please try a different topic."
+msgstr ""
+
+#: inc/modules/ai-writer.php:706
+msgid "Anthropic is temporarily overloaded. Please try again in a moment."
+msgstr ""
+
+#: inc/modules/ai-writer.php:711
+msgid "Anthropic returned an error (HTTP %1$d): %2$s"
+msgstr ""
+
+#: inc/modules/ai-writer.php:718
+msgid "Anthropic returned an unexpected error (HTTP %d)."
+msgstr ""
+
+#: inc/modules/ai-writer.php:790
+msgid "Draft generated. Review it below, then save it as a post draft."
+msgstr ""
+
+#: inc/modules/ai-writer.php:799
+msgid "Saving…"
+msgstr ""
+
+#: inc/modules/ai-writer.php:800
+msgid "Save as draft"
+msgstr ""
+
+#: inc/modules/ai-writer.php:859
+msgid "You are not allowed to create posts."
+msgstr ""
+
+#: inc/modules/ai-writer.php:864
+msgid "No generated draft was found. Generate one first, then save."
+msgstr ""
+
+#: inc/modules/ai-writer.php:869
+msgid "AI draft"
+msgstr ""
+
+#: inc/modules/ai-writer.php:890
+msgid "The draft could not be saved."
+msgstr ""
+
+#: inc/modules/ai-writer.php:904
+msgid "Saved as a draft."
+msgstr ""
+
+#: inc/modules/ai-writer.php:909
+msgid "Edit draft"
+msgstr ""
+
+#: inc/modules/ai-writer.php:916
+msgid "Preview"
+msgstr ""
+
+#: inc/modules/analytics.php:186
+msgid "No OAuth scope requested."
+msgstr ""
+
+#: inc/modules/analytics.php:191
+msgid "Google API calls are only allowed in admin/cron context."
+msgstr ""
+
+#: inc/modules/analytics.php:195
+msgid "The PHP OpenSSL extension is required to sign the request but is not available on this server."
+msgstr ""
+
+#: inc/modules/analytics.php:201
+msgid "Service-account email and private key are required."
+msgstr ""
+
+#: inc/modules/analytics.php:240
+msgid "Could not sign the request. Check that the private key is a valid service-account key (PEM)."
+msgstr ""
+
+#: inc/modules/analytics.php:269
+msgid "No access token returned."
+msgstr ""
+
+#: inc/modules/analytics.php:385
+msgid "A GA4 property ID is required."
+msgstr ""
+
+#: inc/modules/analytics.php:615
+msgid "A Search Console site URL is required."
+msgstr ""
+
+#: inc/modules/analytics.php:662
+#: inc/modules/analytics.php:663
+#: inc/modules/analytics.php:679
+#: inc/modules/analytics.php:895
+msgid "Analytics"
+msgstr ""
+
+#: inc/modules/analytics.php:680
+msgid "GA4 + Search Console"
+msgstr ""
+
+#: inc/modules/analytics.php:749
+#: inc/modules/rank-tracker.php:590
+msgid "Permission denied."
+msgstr ""
+
+#: inc/modules/analytics.php:753
+msgid "Analytics cache cleared. Reload this page to pull fresh data."
+msgstr ""
+
+#: inc/modules/analytics.php:767
+msgid "Connect Google to see your stats"
+msgstr ""
+
+#: inc/modules/analytics.php:768
+msgid "Live GA4 and Search Console data needs a Google service account. One-time setup:"
+msgstr ""
+
+#: inc/modules/analytics.php:772
+msgid "Setup guide"
+msgstr ""
+
+#: inc/modules/analytics.php:774
+msgid "In the <strong>Google Cloud Console</strong>, create a project and a <strong>service account</strong>; add a <strong>JSON key</strong> and download it."
+msgstr ""
+
+#: inc/modules/analytics.php:775
+msgid "Enable the <strong>Google Analytics Data API</strong> and the <strong>Search Console API</strong> for that project."
+msgstr ""
+
+#: inc/modules/analytics.php:776
+msgid "In <strong>GA4 → Admin → Property Access Management</strong>, add the service-account email as a <em>Viewer</em>. Note the numeric <strong>Property ID</strong> (GA4 → Admin → Property Settings)."
+msgstr ""
+
+#: inc/modules/analytics.php:777
+msgid "In <strong>Search Console → Settings → Users and permissions</strong>, add the service-account email as an <em>Owner</em> (or full user) of the verified property."
+msgstr ""
+
+#: inc/modules/analytics.php:778
+msgid "Below, paste the service-account <strong>email</strong>, its <strong>private key</strong> (the <code>private_key</code> value from the JSON), your GA4 <strong>Property ID</strong>, and confirm the <strong>Search Console site URL</strong>."
+msgstr ""
+
+#: inc/modules/analytics.php:792
+msgid "%s could not be loaded:"
+msgstr ""
+
+#: inc/modules/analytics.php:804
+msgid "Active users"
+msgstr ""
+
+#: inc/modules/analytics.php:805
+msgid "Sessions"
+msgstr ""
+
+#: inc/modules/analytics.php:806
+msgid "Pageviews"
+msgstr ""
+
+#: inc/modules/analytics.php:807
+msgid "New users"
+msgstr ""
+
+#: inc/modules/analytics.php:827
+msgid "Top pages (last 28 days)"
+msgstr ""
+
+#: inc/modules/analytics.php:829
+msgid "No page data yet."
+msgstr ""
+
+#: inc/modules/analytics.php:834
+msgid "Page"
+msgstr ""
+
+#: inc/modules/analytics.php:835
+msgid "Views"
+msgstr ""
+
+#: inc/modules/analytics.php:860
+msgid "Top search queries (last 28 days)"
+msgstr ""
+
+#: inc/modules/analytics.php:862
+msgid "No Search Console data yet."
+msgstr ""
+
+#: inc/modules/analytics.php:867
+msgid "Query"
+msgstr ""
+
+#: inc/modules/analytics.php:868
+msgid "Clicks"
+msgstr ""
+
+#: inc/modules/analytics.php:869
+msgid "Impressions"
+msgstr ""
+
+#: inc/modules/analytics.php:870
+msgid "CTR"
+msgstr ""
+
+#: inc/modules/analytics.php:871
+#: inc/modules/rank-tracker.php:704
+msgid "Position"
+msgstr ""
+
+#: inc/modules/analytics.php:896
+msgid "Google Analytics 4 traffic and Search Console performance, right inside your dashboard."
+msgstr ""
+
+#: inc/modules/analytics.php:900
+msgid "Analytics settings saved."
+msgstr ""
+
+#: inc/modules/analytics.php:908
+msgid "Refreshing…"
+msgstr ""
+
+#: inc/modules/analytics.php:909
+msgid "Refresh data"
+msgstr ""
+
+#: inc/modules/analytics.php:910
+msgid "Data is cached for 30 minutes. Refresh clears the cache."
+msgstr ""
+
+#: inc/modules/analytics.php:917
+msgid "Google Analytics"
+msgstr ""
+
+#: inc/modules/analytics.php:926
+msgid "Search Console"
+msgstr ""
+
+#: inc/modules/analytics.php:949
+msgid "Google Analytics 4"
+msgstr ""
+
+#: inc/modules/analytics.php:950
+msgid "Loads gtag.js on the public site so GA4 records traffic."
+msgstr ""
+
+#: inc/modules/analytics.php:953
+msgid "Measurement ID"
+msgstr ""
+
+#: inc/modules/analytics.php:956
+msgid "From GA4 → Admin → Data Streams → your web stream."
+msgstr ""
+
+#: inc/modules/analytics.php:960
+msgid "Load GA4 on the site"
+msgstr ""
+
+#: inc/modules/analytics.php:968
+msgid "Reporting API credentials"
+msgstr ""
+
+#: inc/modules/analytics.php:969
+msgid "Service-account credentials used to read GA4 &amp; Search Console data for the dashboard above. These are used only in the admin and never exposed on the front end."
+msgstr ""
+
+#: inc/modules/analytics.php:972
+msgid "Service-account email"
+msgstr ""
+
+#: inc/modules/analytics.php:975
+msgid "The client_email from the service-account JSON key."
+msgstr ""
+
+#: inc/modules/analytics.php:979
+msgid "Service-account private key"
+msgstr ""
+
+#: inc/modules/analytics.php:983
+msgid "The private_key value from the JSON key (PEM). Paste it exactly; escaped \\n sequences are handled automatically."
+msgstr ""
+
+#: inc/modules/analytics.php:987
+msgid "GA4 Property ID"
+msgstr ""
+
+#: inc/modules/analytics.php:990
+msgid "Numeric property ID from GA4 → Admin → Property Settings."
+msgstr ""
+
+#: inc/modules/analytics.php:994
+msgid "Search Console site URL"
+msgstr ""
+
+#: inc/modules/analytics.php:997
+msgid "The exact property URL as verified in Search Console. Defaults to your site home."
+msgstr ""
+
+#: inc/modules/custom-css.php:172
+msgid "Custom CSS (this entry)"
+msgstr ""
+
+#: inc/modules/custom-css.php:193
+msgid "CSS added here loads only on this single entry, after the site-wide Custom CSS. It is placed inside its own &lt;style&gt; tag exactly as written."
+msgstr ""
+
+#: inc/modules/custom-css.php:197
+msgid "/* e.g. .tf-article__title { color: #b8860b; } */"
+msgstr ""
+
+#: inc/modules/custom-css.php:252
+#: inc/modules/custom-css.php:253
+#: inc/modules/custom-css.php:272
+#: inc/modules/custom-css.php:316
+msgid "Custom CSS"
+msgstr ""
+
+#: inc/modules/custom-css.php:273
+msgid "Site-wide style tweaks"
+msgstr ""
+
+#: inc/modules/custom-css.php:317
+msgid "Add your own CSS to fine-tune the look of the whole site — no child theme required."
+msgstr ""
+
+#: inc/modules/custom-css.php:321
+msgid "Custom CSS saved."
+msgstr ""
+
+#: inc/modules/custom-css.php:330
+msgid "Site-wide CSS"
+msgstr ""
+
+#: inc/modules/custom-css.php:331
+msgid "This CSS loads on every page, inside its own <code>&lt;style&gt;</code> tag, late in the <code>&lt;head&gt;</code> so it overrides the theme defaults. Use the theme <code>--tf-*</code> variables and <code>.tf-*</code> classes to target elements. To style a single entry only, use the <strong>Custom CSS (this entry)</strong> box on that post or page."
+msgstr ""
+
+#: inc/modules/custom-css.php:336
+msgid "CSS"
+msgstr ""
+
+#: inc/modules/custom-css.php:340
+msgid "/* Example */\n.tf-site-header { box-shadow: none; }\n:root { --tf-accent: #b8860b; }"
+msgstr ""
+
+#: inc/modules/custom-css.php:343
+msgid "CSS is saved and output exactly as written; only administrators can edit it."
+msgstr ""
+
+#: inc/modules/footer-builder.php:149
+msgid "&copy; {year} %s. All rights reserved."
+msgstr ""
+
+#: inc/modules/footer-builder.php:340
+msgid "Accepted payment method"
+msgstr ""
+
+#: inc/modules/footer-builder.php:355
+#: inc/modules/footer-builder.php:356
+#: inc/modules/footer-builder.php:375
+#: inc/modules/footer-builder.php:534
+msgid "Footer"
+msgstr ""
+
+#: inc/modules/footer-builder.php:376
+msgid "Copyright, social links & payment badges"
+msgstr ""
+
+#: inc/modules/footer-builder.php:463
+msgid "Network"
+msgstr ""
+
+#: inc/modules/footer-builder.php:478
+msgid "Profile URL"
+msgstr ""
+
+#: inc/modules/footer-builder.php:483
+#: inc/modules/homepage-builder.php:706
+msgid "https://…"
+msgstr ""
+
+#: inc/modules/footer-builder.php:488
+#: inc/modules/footer-builder.php:522
+#: inc/modules/rank-tracker.php:812
+msgid "Remove"
+msgstr ""
+
+#: inc/modules/footer-builder.php:507
+msgid "Badge image"
+msgstr ""
+
+#: inc/modules/footer-builder.php:513
+msgid "https://…/visa.svg"
+msgstr ""
+
+#: inc/modules/footer-builder.php:535
+msgid "Control the footer copyright line, your social profile links and the payment badges shown in the footer bar."
+msgstr ""
+
+#: inc/modules/footer-builder.php:539
+msgid "Footer settings saved."
+msgstr ""
+
+#: inc/modules/footer-builder.php:551
+msgid "Copyright"
+msgstr ""
+
+#: inc/modules/footer-builder.php:554
+msgid "Copyright line"
+msgstr ""
+
+#: inc/modules/footer-builder.php:558
+msgid "&copy; {year} Your Site. All rights reserved."
+msgstr ""
+
+#: inc/modules/footer-builder.php:561
+msgid "Use the <code>{year}</code> token to insert the current year automatically. Leave blank to use the default line."
+msgstr ""
+
+#: inc/modules/footer-builder.php:570
+msgid "Social links"
+msgstr ""
+
+#: inc/modules/footer-builder.php:571
+msgid "Add a link for each social network you want shown as an icon in the footer."
+msgstr ""
+
+#: inc/modules/footer-builder.php:587
+msgid "+ Add social link"
+msgstr ""
+
+#: inc/modules/footer-builder.php:594
+msgid "Payment badges"
+msgstr ""
+
+#: inc/modules/footer-builder.php:595
+msgid "Upload or link to small payment / trust badge images (Visa, PayPal, etc). They appear at about 26px tall in the footer."
+msgstr ""
+
+#: inc/modules/footer-builder.php:611
+msgid "+ Add payment badge"
+msgstr ""
+
+#: inc/modules/footer-builder.php:69
+msgid "Facebook"
+msgstr ""
+
+#: inc/modules/footer-builder.php:70
+msgid "X (Twitter)"
+msgstr ""
+
+#: inc/modules/footer-builder.php:71
+msgid "Instagram"
+msgstr ""
+
+#: inc/modules/footer-builder.php:72
+msgid "YouTube"
+msgstr ""
+
+#: inc/modules/footer-builder.php:73
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/modules/footer-builder.php:74
+#: inc/seo/seo-meta.php:805
+msgid "Pinterest"
+msgstr ""
+
+#: inc/modules/footer-builder.php:75
+msgid "TikTok"
+msgstr ""
+
+#: inc/modules/footer-builder.php:76
+msgid "GitHub"
+msgstr ""
+
+#: inc/modules/footer-builder.php:77
+msgid "RSS"
+msgstr ""
+
+#: inc/modules/general-settings.php:100
+msgid "Control the reading experience across the blog and single posts."
+msgstr ""
+
+#: inc/modules/general-settings.php:104
+msgid "Blog layout"
+msgstr ""
+
+#: inc/modules/general-settings.php:108
+msgid "Right sidebar"
+msgstr ""
+
+#: inc/modules/general-settings.php:109
+msgid "Full width"
+msgstr ""
+
+#: inc/modules/general-settings.php:111
+msgid "Full width hides the sidebar on blog and archive pages."
+msgstr ""
+
+#: inc/modules/general-settings.php:115
+msgid "Sticky header"
+msgstr ""
+
+#: inc/modules/general-settings.php:118
+msgid "Keep the header pinned to the top as visitors scroll."
+msgstr ""
+
+#: inc/modules/general-settings.php:122
+msgid "Show author in post meta"
+msgstr ""
+
+#: inc/modules/general-settings.php:128
+msgid "Show breadcrumbs"
+msgstr ""
+
+#: inc/modules/general-settings.php:134
+msgid "Back-to-top button"
+msgstr ""
+
+#: inc/modules/general-settings.php:140
+msgid "Excerpt length (words)"
+msgstr ""
+
+#: inc/modules/general-settings.php:144
+msgid "How many words to show in automatic post excerpts."
+msgstr ""
+
+#: inc/modules/general-settings.php:151
+msgid "Performance"
+msgstr ""
+
+#: inc/modules/general-settings.php:152
+msgid "These switches drive the performance engine. The defaults target a 100/100 score; dial them back only if a plugin needs something they remove."
+msgstr ""
+
+#: inc/modules/general-settings.php:156
+msgid "Clean up <head>"
+msgstr ""
+
+#: inc/modules/general-settings.php:159
+msgid "Remove emoji scripts, generator tags, oEmbed discovery and other head bloat."
+msgstr ""
+
+#: inc/modules/general-settings.php:163
+msgid "Defer JavaScript"
+msgstr ""
+
+#: inc/modules/general-settings.php:166
+msgid "Add defer to front-end scripts so they never block rendering."
+msgstr ""
+
+#: inc/modules/general-settings.php:170
+msgid "Remove jQuery Migrate"
+msgstr ""
+
+#: inc/modules/general-settings.php:173
+msgid "Drop the legacy jQuery Migrate shim when jQuery is loaded."
+msgstr ""
+
+#: inc/modules/general-settings.php:177
+msgid "Strip block-library CSS"
+msgstr ""
+
+#: inc/modules/general-settings.php:180
+msgid "Remove the WordPress block and global-styles CSS. Off by default because it can affect block-built pages."
+msgstr ""
+
+#: inc/modules/general-settings.php:184
+msgid "Preconnect origins"
+msgstr ""
+
+#: inc/modules/general-settings.php:187
+msgid "Comma-separated origins to warm up early with a preconnect resource hint."
+msgstr ""
+
+#: inc/modules/general-settings.php:30
+#: inc/modules/general-settings.php:31
+#: inc/modules/general-settings.php:50
+#: inc/modules/general-settings.php:63
+#: inc/seo/seo-meta.php:726
+msgid "General"
+msgstr ""
+
+#: inc/modules/general-settings.php:51
+msgid "Branding, layout and performance"
+msgstr ""
+
+#: inc/modules/general-settings.php:64
+msgid "Brand the theme, tune the blog layout, and control the performance optimisations. These options power the header, templates and the performance engine."
+msgstr ""
+
+#: inc/modules/general-settings.php:70
+msgid "Branding"
+msgstr ""
+
+#: inc/modules/general-settings.php:71
+msgid "Your logo and site title come from the WordPress Customizer; these add the extras the theme shows around them."
+msgstr ""
+
+#: inc/modules/general-settings.php:75
+msgid "Tagline"
+msgstr ""
+
+#: inc/modules/general-settings.php:77
+msgid "A short line that describes your site"
+msgstr ""
+
+#: inc/modules/general-settings.php:78
+msgid "Shown near the brand where the theme supports it."
+msgstr ""
+
+#: inc/modules/general-settings.php:82
+msgid "Header button text"
+msgstr ""
+
+#: inc/modules/general-settings.php:84
+msgid "Subscribe"
+msgstr ""
+
+#: inc/modules/general-settings.php:85
+msgid "Optional call-to-action button in the header. Leave blank to hide it."
+msgstr ""
+
+#: inc/modules/general-settings.php:89
+msgid "Header button link"
+msgstr ""
+
+#: inc/modules/general-settings.php:92
+msgid "Where the header button points. Only used when the button text is set."
+msgstr ""
+
+#: inc/modules/general-settings.php:99
+msgid "Layout"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:172
+msgid "Welcome"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:174
+msgid "Read the blog"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:180
+#: inc/modules/homepage-builder.php:630
+msgid "Latest posts"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:332
+msgid "%s post"
+msgid_plural "%s posts"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/homepage-builder.php:413
+#: inc/modules/homepage-builder.php:414
+#: inc/modules/homepage-builder.php:433
+#: inc/modules/homepage-builder.php:879
+msgid "Homepage"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:434
+msgid "Build your front page from blocks"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:51
+msgid "Hero"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:52
+msgid "Post grid"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:53
+msgid "Categories"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:54
+msgid "Rich text"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:55
+msgid "Call to action"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:577
+msgid "Block type"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:591
+msgid "Order"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:604
+msgid "Heading"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:611
+msgid "Subheading"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:612
+msgid "Primary button text"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:612
+msgid "e.g. Get started"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:613
+msgid "Primary button URL"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:614
+msgid "Secondary button text"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:614
+msgid "e.g. Learn more"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:615
+msgid "Secondary button URL"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:618
+msgid "Background (optional)"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:620
+msgid "e.g. #f6fbf8 or linear-gradient(135deg,#ecfaf1,#c8e8d2)"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:627
+msgid "Posts source"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:631
+msgid "Posts from a category"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:635
+msgid "Category"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:640
+msgid "How many to show"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:642
+msgid "Number of posts / categories. Blank or 0 = a sensible default."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:647
+msgid "Content"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:650
+msgid "Supporting text"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:651
+msgid "Button text"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:651
+msgid "e.g. Subscribe"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:652
+msgid "Button URL"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:654
+msgid "Remove block"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:783
+msgid "— Select a category —"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:796
+msgid "Only used when the source is “Posts from a category”."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:814
+msgid "Write anything — basic HTML is allowed."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:817
+msgid "Basic HTML is allowed (headings, lists, links, images). Scripts are stripped."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:880
+msgid "Compose your front page from a stack of blocks — a hero, post grids, category showcases, rich text and call-to-action bands."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:884
+msgid "Homepage saved."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:889
+msgid "How the homepage works"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:890
+msgid "Add blocks below and they render top-to-bottom on your front page. Set the <strong>Order</strong> number to reorder — lower numbers appear first. Pick a <strong>Block type</strong> and only that type’s fields show."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:891
+msgid "This screen controls the front page only when your site shows a static homepage. Under <em>Settings → Reading</em>, set <em>Your homepage displays</em> to <em>A static page</em> (any page will do — this builder takes over its output)."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:892
+msgid "Leave the list empty to fall back to an automatic homepage (site title hero + latest posts)."
+msgstr ""
+
+#: inc/modules/homepage-builder.php:901
+msgid "Blocks"
+msgstr ""
+
+#: inc/modules/homepage-builder.php:919
+msgid "+ Add block"
+msgstr ""
+
+#: inc/modules/indexing.php:269
+msgid "No valid URLs to submit."
+msgstr ""
+
+#: inc/modules/indexing.php:286
+msgid "IndexNow key or site host is unavailable."
+msgstr ""
+
+#: inc/modules/indexing.php:297
+msgid "Skipped — identical batch was just submitted."
+msgstr ""
+
+#: inc/modules/indexing.php:368
+msgid "Submitted — URLs accepted."
+msgstr ""
+
+#: inc/modules/indexing.php:370
+msgid "Accepted — key validation pending."
+msgstr ""
+
+#: inc/modules/indexing.php:372
+msgid "Bad request — invalid URL format."
+msgstr ""
+
+#: inc/modules/indexing.php:374
+msgid "Forbidden — key not valid for this host."
+msgstr ""
+
+#: inc/modules/indexing.php:376
+msgid "Unprocessable — URL does not match the host or key."
+msgstr ""
+
+#: inc/modules/indexing.php:378
+msgid "Rate limited — too many requests, try again later."
+msgstr ""
+
+#: inc/modules/indexing.php:380
+msgid "Request failed to complete."
+msgstr ""
+
+#: inc/modules/indexing.php:386
+msgid "IndexNow responded with HTTP %d."
+msgstr ""
+
+#: inc/modules/indexing.php:415
+msgid "Google Indexing API is not configured."
+msgstr ""
+
+#: inc/modules/indexing.php:437
+msgid "Could not obtain a Google access token."
+msgstr ""
+
+#: inc/modules/indexing.php:473
+msgid "Google notified: %1$d of %2$d URLs."
+msgstr ""
+
+#: inc/modules/indexing.php:477
+msgid "Google Indexing API rejected the request."
+msgstr ""
+
+#: inc/modules/indexing.php:502
+#: inc/modules/indexing.php:503
+#: inc/modules/indexing.php:522
+#: inc/modules/indexing.php:784
+msgid "Indexing"
+msgstr ""
+
+#: inc/modules/indexing.php:523
+msgid "IndexNow + Google instant indexing"
+msgstr ""
+
+#: inc/modules/indexing.php:582
+msgid "Please wait a moment before submitting again (rate limited ~%ds)."
+msgstr ""
+
+#: inc/modules/indexing.php:659
+#: inc/modules/indexing.php:798
+msgid "Submitted %1$d URL. %2$s"
+msgid_plural "Submitted %1$d URLs. %2$s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/indexing.php:678
+msgid "No submissions yet."
+msgstr ""
+
+#: inc/modules/indexing.php:682
+msgid "IndexNow"
+msgstr ""
+
+#: inc/modules/indexing.php:683
+msgid "Google"
+msgstr ""
+
+#: inc/modules/indexing.php:688
+msgid "When"
+msgstr ""
+
+#: inc/modules/indexing.php:689
+msgid "Service"
+msgstr ""
+
+#: inc/modules/indexing.php:690
+msgid "URLs"
+msgstr ""
+
+#: inc/modules/indexing.php:691
+msgid "Status"
+msgstr ""
+
+#: inc/modules/indexing.php:692
+msgid "Result"
+msgstr ""
+
+#: inc/modules/indexing.php:709
+msgid "OK"
+msgstr ""
+
+#: inc/modules/indexing.php:712
+msgid "Failed"
+msgstr ""
+
+#: inc/modules/indexing.php:763
+msgid "Please paste at least one URL."
+msgstr ""
+
+#: inc/modules/indexing.php:785
+msgid "Push new and updated URLs to search engines instantly with IndexNow (Bing, Yandex &amp; more) and, when configured, the Google Indexing API."
+msgstr ""
+
+#: inc/modules/indexing.php:807
+msgid "IndexNow key"
+msgstr ""
+
+#: inc/modules/indexing.php:808
+msgid "Themify generated this key automatically and serves the required verification file for you. No setup needed — just submit URLs below."
+msgstr ""
+
+#: inc/modules/indexing.php:811
+msgid "Key"
+msgstr ""
+
+#: inc/modules/indexing.php:820
+msgid "Copy key"
+msgstr ""
+
+#: inc/modules/indexing.php:826
+msgid "Verification file"
+msgstr ""
+
+#: inc/modules/indexing.php:835
+msgid "Copy URL"
+msgstr ""
+
+#: inc/modules/indexing.php:840
+msgid "Open"
+msgstr ""
+
+#: inc/modules/indexing.php:843
+msgid "This file must stay reachable for IndexNow to trust your submissions. Themify serves it automatically."
+msgstr ""
+
+#: inc/modules/indexing.php:849
+msgid "Submit URLs"
+msgstr ""
+
+#: inc/modules/indexing.php:850
+msgid "New and updated posts are submitted automatically when you publish. Use these to push a batch on demand."
+msgstr ""
+
+#: inc/modules/indexing.php:855
+#: inc/modules/indexing.php:860
+msgid "Submitting…"
+msgstr ""
+
+#: inc/modules/indexing.php:856
+msgid "Submit latest 50 URLs"
+msgstr ""
+
+#: inc/modules/indexing.php:861
+msgid "Submit homepage"
+msgstr ""
+
+#: inc/modules/indexing.php:870
+msgid "Submit specific URLs"
+msgstr ""
+
+#: inc/modules/indexing.php:871
+msgid "Paste one URL per line (they must belong to this site). Up to 500 at a time."
+msgstr ""
+
+#: inc/modules/indexing.php:881
+msgid "Submit these URLs"
+msgstr ""
+
+#: inc/modules/indexing.php:887
+msgid "Google Indexing API"
+msgstr ""
+
+#: inc/modules/indexing.php:889
+msgid "Google Indexing is connected. Eligible URLs are also pushed to Google when published."
+msgstr ""
+
+#: inc/modules/indexing.php:890
+msgid "Connected"
+msgstr ""
+
+#: inc/modules/indexing.php:892
+msgid "Optional. Google's Indexing API is limited to certain page types and requires a service-account connection provided by an add-on. IndexNow above works with no setup and covers Bing, Yandex and more."
+msgstr ""
+
+#: inc/modules/indexing.php:893
+msgid "Not configured"
+msgstr ""
+
+#: inc/modules/indexing.php:899
+msgid "Recent submissions"
+msgstr ""
+
+#: inc/modules/indexing.php:900
+msgid "The last 50 submissions to IndexNow and Google."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:144
+msgid "An empty query cannot be searched."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:148
+msgid "SerpAPI calls are only allowed in admin/cron context."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:153
+msgid "No SerpAPI key is configured."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:206
+msgid "The SerpAPI request failed."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:295
+msgid "Primary key"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:296
+msgid "Backup key"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:302
+msgid "Key %d"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:495
+#: inc/modules/rank-tracker.php:496
+#: inc/modules/rank-tracker.php:512
+#: inc/modules/rank-tracker.php:875
+msgid "Rank Tracker"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:513
+msgid "Track Google keyword positions"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:593
+msgid "Add a SerpAPI key first."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:596
+msgid "Add at least one keyword to track first."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:606
+msgid "Checked %1$d keyword. %2$d could not be fetched."
+msgid_plural "Checked %1$d keywords. %2$d could not be fetched."
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/rank-tracker.php:633
+msgid "Not ranked"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:647
+msgid "#%d"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:665
+#: inc/modules/rank-tracker.php:746
+msgid "—"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:668
+msgid "New"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:672
+msgid "Dropped"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:677
+msgid "No change"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:699
+msgid "No keywords tracked yet. Add some below and save."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:703
+#: inc/modules/rank-tracker.php:791
+msgid "Keyword"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:705
+msgid "Change"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:706
+msgid "Ranking URL"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:707
+msgid "Last checked"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:727
+msgid "Target:"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:736
+msgid "Not checked"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:750
+msgid "Never"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:796
+msgid "e.g. best running shoes"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:802
+msgid "Target URL (optional)"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:807
+msgid "/the-page-you-want-to-rank/"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:834
+msgid "Searches left"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:840
+msgid "Used this month"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:846
+msgid "API keys"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:856
+msgid "%s:"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:876
+msgid "Track where your site ranks in Google for the keywords that matter, powered by SerpAPI."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:880
+msgid "Rank Tracker settings saved."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:888
+msgid "Add your SerpAPI key to start tracking"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:889
+msgid "Create a free account at <a href=\"https://serpapi.com/\" target=\"_blank\" rel=\"noopener noreferrer\">serpapi.com</a>, copy your private API key, and paste it in the form below. Add a second key as a backup to keep tracking when the first runs out of searches."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:897
+msgid "Checking rankings…"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:898
+msgid "Check rankings now"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:899
+msgid "Each keyword uses one SerpAPI search. Results are cached for 6 hours."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:904
+msgid "Current rankings"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:919
+msgid "Tracked keywords"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:920
+msgid "Add the search terms you want to monitor. The optional target is just a note of the page you hope ranks — the tracker reports whichever of your URLs Google shows first."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:940
+msgid "+ Add keyword"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:946
+msgid "SerpAPI keys"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:947
+msgid "Your private SerpAPI keys. The backup key is used automatically when the primary key runs out of searches. Keys are stored securely and never shown on the public site."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:950
+msgid "Primary API key"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:952
+msgid "Your SerpAPI private key"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:953
+msgid "From your SerpAPI dashboard → API Key."
+msgstr ""
+
+#: inc/modules/rank-tracker.php:957
+msgid "Backup API key (optional)"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:959
+msgid "A second key for when the first is exhausted"
+msgstr ""
+
+#: inc/modules/rank-tracker.php:960
+msgid "Tried automatically if the primary key returns a quota or error response."
+msgstr ""
+
+#: inc/modules/script-injection.php:184
+msgid "snippet"
+msgstr ""
+
+#: inc/modules/script-injection.php:228
+#: inc/modules/script-injection.php:229
+#: inc/modules/script-injection.php:425
+msgid "Header &amp; Footer Code"
+msgstr ""
+
+#: inc/modules/script-injection.php:248
+msgid "Header & Footer Code"
+msgstr ""
+
+#: inc/modules/script-injection.php:249
+msgid "Analytics, verification & pixels"
+msgstr ""
+
+#: inc/modules/script-injection.php:354
+msgid "Name"
+msgstr ""
+
+#: inc/modules/script-injection.php:360
+msgid "e.g. Google Analytics"
+msgstr ""
+
+#: inc/modules/script-injection.php:368
+msgid "Placement"
+msgstr ""
+
+#: inc/modules/script-injection.php:393
+msgid "Enabled"
+msgstr ""
+
+#: inc/modules/script-injection.php:401
+msgid "Code"
+msgstr ""
+
+#: inc/modules/script-injection.php:406
+msgid "Paste the exact snippet your provider gave you, including the <script> or <meta> tags."
+msgstr ""
+
+#: inc/modules/script-injection.php:412
+msgid "Remove snippet"
+msgstr ""
+
+#: inc/modules/script-injection.php:426
+msgid "Add code snippets to the &lt;head&gt;, right after the opening &lt;body&gt;, or just before &lt;/body&gt; — without editing theme files."
+msgstr ""
+
+#: inc/modules/script-injection.php:430
+msgid "Code snippets saved."
+msgstr ""
+
+#: inc/modules/script-injection.php:435
+msgid "What this is for"
+msgstr ""
+
+#: inc/modules/script-injection.php:436
+msgid "Paste snippets your services give you and choose where they load:"
+msgstr ""
+
+#: inc/modules/script-injection.php:438
+msgid "<strong>Google Analytics / gtag.js</strong> — paste in the <em>Header</em>."
+msgstr ""
+
+#: inc/modules/script-injection.php:439
+msgid "<strong>Google Search Console &amp; Bing site verification</strong> — paste the <code>&lt;meta&gt;</code> tag in the <em>Header</em>."
+msgstr ""
+
+#: inc/modules/script-injection.php:440
+msgid "<strong>Meta (Facebook) Pixel / Google Tag Manager</strong> — the main script in the <em>Header</em>, the <code>&lt;noscript&gt;</code> fallback at <em>Body — top</em>."
+msgstr ""
+
+#: inc/modules/script-injection.php:441
+msgid "Chat widgets and other deferred scripts usually go in the <em>Footer</em>."
+msgstr ""
+
+#: inc/modules/script-injection.php:443
+msgid "For site styling use the <strong>Custom CSS</strong> screen instead of a <code>&lt;style&gt;</code> snippet here."
+msgstr ""
+
+#: inc/modules/script-injection.php:444
+msgid "Code is output <strong>exactly as entered</strong> so it works as your provider intended. Only administrators can edit these snippets. Double-check anything you paste, and remove snippets you no longer use."
+msgstr ""
+
+#: inc/modules/script-injection.php:453
+msgid "Snippets"
+msgstr ""
+
+#: inc/modules/script-injection.php:472
+msgid "+ Add snippet"
+msgstr ""
+
+#: inc/modules/script-injection.php:60
+msgid "Header (inside &lt;head&gt;)"
+msgstr ""
+
+#: inc/modules/script-injection.php:61
+msgid "Body — top (after opening &lt;body&gt;)"
+msgstr ""
+
+#: inc/modules/script-injection.php:62
+msgid "Footer (before &lt;/body&gt;)"
+msgstr ""
+
+#: inc/modules/seo-health.php:1004
+msgid "No audit yet. Click “Run audit” to check your pages."
+msgstr ""
+
+#: inc/modules/seo-health.php:421
+msgid "Missing <title> tag"
+msgstr ""
+
+#: inc/modules/seo-health.php:421
+msgid "Add a unique, descriptive title (30–60 characters)."
+msgstr ""
+
+#: inc/modules/seo-health.php:423
+msgid "Title is short"
+msgstr ""
+
+#: inc/modules/seo-health.php:423
+msgid "Aim for 30–60 characters so it reads well and uses the SERP space."
+msgstr ""
+
+#: inc/modules/seo-health.php:425
+msgid "Title is long"
+msgstr ""
+
+#: inc/modules/seo-health.php:425
+msgid "Trim to 60 characters or fewer to avoid truncation in search results."
+msgstr ""
+
+#: inc/modules/seo-health.php:434
+msgid "No meta description"
+msgstr ""
+
+#: inc/modules/seo-health.php:434
+msgid "Write a 120–160 character summary to improve click-through from search."
+msgstr ""
+
+#: inc/modules/seo-health.php:436
+msgid "Meta description is short"
+msgstr ""
+
+#: inc/modules/seo-health.php:436
+msgid "Expand toward 120–160 characters to fully use the snippet."
+msgstr ""
+
+#: inc/modules/seo-health.php:438
+msgid "Meta description is long"
+msgstr ""
+
+#: inc/modules/seo-health.php:438
+msgid "Keep it under ~160 characters so it is not cut off."
+msgstr ""
+
+#: inc/modules/seo-health.php:445
+msgid "No <h1> heading"
+msgstr ""
+
+#: inc/modules/seo-health.php:445
+msgid "Every page should have exactly one clear <h1>."
+msgstr ""
+
+#: inc/modules/seo-health.php:447
+msgid "%d <h1> headings"
+msgstr ""
+
+#: inc/modules/seo-health.php:447
+msgid "Use a single <h1> and demote the rest to <h2>/<h3>."
+msgstr ""
+
+#: inc/modules/seo-health.php:452
+msgid "No canonical link"
+msgstr ""
+
+#: inc/modules/seo-health.php:452
+msgid "Add a rel=\"canonical\" link to prevent duplicate-content dilution."
+msgstr ""
+
+#: inc/modules/seo-health.php:463
+msgid "%1$d of %2$d image is missing alt text"
+msgid_plural "%1$d of %2$d images are missing alt text"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/seo-health.php:467
+msgid "Add descriptive alt attributes for accessibility and image search."
+msgstr ""
+
+#: inc/modules/seo-health.php:473
+msgid "No responsive viewport meta"
+msgstr ""
+
+#: inc/modules/seo-health.php:473
+msgid "Add <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> for mobile."
+msgstr ""
+
+#: inc/modules/seo-health.php:478
+msgid "No lang on <html>"
+msgstr ""
+
+#: inc/modules/seo-health.php:478
+msgid "Set a language on the <html> tag (e.g. lang=\"en\") for accessibility."
+msgstr ""
+
+#: inc/modules/seo-health.php:483
+msgid "Page is set to noindex"
+msgstr ""
+
+#: inc/modules/seo-health.php:483
+msgid "This page tells search engines not to index it. Remove noindex unless intentional."
+msgstr ""
+
+#: inc/modules/seo-health.php:489
+msgid "Incomplete Open Graph tags"
+msgstr ""
+
+#: inc/modules/seo-health.php:489
+msgid "Add og:title and og:image so shared links show a rich preview."
+msgstr ""
+
+#: inc/modules/seo-health.php:494
+msgid "No JSON-LD structured data"
+msgstr ""
+
+#: inc/modules/seo-health.php:494
+msgid "Add schema.org JSON-LD to help search engines understand the page."
+msgstr ""
+
+#: inc/modules/seo-health.php:505
+msgid "Thin content (~%s words)"
+msgstr ""
+
+#: inc/modules/seo-health.php:508
+msgid "Aim for 300+ words of useful copy so the page has substance to rank."
+msgstr ""
+
+#: inc/modules/seo-health.php:587
+msgid "Could not fetch page"
+msgstr ""
+
+#: inc/modules/seo-health.php:613
+msgid "HTTP %d response"
+msgstr ""
+
+#: inc/modules/seo-health.php:614
+msgid "The page did not return a normal 200 OK. Fix the redirect/error before it can rank."
+msgstr ""
+
+#: inc/modules/seo-health.php:636
+msgid "Slow response (%s ms)"
+msgstr ""
+
+#: inc/modules/seo-health.php:637
+msgid "Improve caching / server response time; aim for under ~800 ms."
+msgstr ""
+
+#: inc/modules/seo-health.php:72
+#: inc/modules/seo-health.php:73
+#: inc/modules/seo-health.php:92
+#: inc/modules/seo-health.php:965
+msgid "SEO Health"
+msgstr ""
+
+#: inc/modules/seo-health.php:779
+msgid "Missing"
+msgstr ""
+
+#: inc/modules/seo-health.php:786
+#: inc/modules/seo-health.php:792
+msgid "%d chars"
+msgstr ""
+
+#: inc/modules/seo-health.php:828
+msgid "No pages were audited. Publish some content and run the audit again."
+msgstr ""
+
+#: inc/modules/seo-health.php:840
+msgid "Last audited %s."
+msgstr ""
+
+#: inc/modules/seo-health.php:848
+msgid "Avg score"
+msgstr ""
+
+#: inc/modules/seo-health.php:849
+msgid "Pages OK"
+msgstr ""
+
+#: inc/modules/seo-health.php:850
+msgid "Warnings"
+msgstr ""
+
+#: inc/modules/seo-health.php:851
+msgid "Critical issues"
+msgstr ""
+
+#: inc/modules/seo-health.php:857
+msgid "URL"
+msgstr ""
+
+#: inc/modules/seo-health.php:858
+msgid "Score"
+msgstr ""
+
+#: inc/modules/seo-health.php:859
+msgid "Title"
+msgstr ""
+
+#: inc/modules/seo-health.php:860
+msgid "Issues"
+msgstr ""
+
+#: inc/modules/seo-health.php:891
+msgid "%s ms"
+msgstr ""
+
+#: inc/modules/seo-health.php:904
+msgid "No issues"
+msgstr ""
+
+#: inc/modules/seo-health.php:908
+msgid "%d critical"
+msgid_plural "%d critical"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/seo-health.php:911
+msgid "%d warning"
+msgid_plural "%d warnings"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/seo-health.php:914
+msgid "%d info"
+msgid_plural "%d info"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/modules/seo-health.php:93
+msgid "On-demand on-page SEO audit"
+msgstr ""
+
+#: inc/modules/seo-health.php:948
+msgid "Critical"
+msgstr ""
+
+#: inc/modules/seo-health.php:950
+msgid "Warning"
+msgstr ""
+
+#: inc/modules/seo-health.php:953
+msgid "Info"
+msgstr ""
+
+#: inc/modules/seo-health.php:966
+msgid "Run an on-demand audit of your most important pages. Themify crawls your home page and latest posts, then checks titles, meta descriptions, headings, canonicals, image alts, Open Graph, structured data and more."
+msgstr ""
+
+#: inc/modules/seo-health.php:971
+msgid "Site audit"
+msgstr ""
+
+#: inc/modules/seo-health.php:975
+msgid "Audits up to %d pages (home + latest posts and pages). The crawl runs on demand and never on a visitor page load."
+msgstr ""
+
+#: inc/modules/seo-health.php:984
+msgid "Auditing…"
+msgstr ""
+
+#: inc/modules/seo-health.php:985
+msgid "Run audit"
+msgstr ""
+
+#: inc/modules/seo-health.php:992
+msgid "Results"
+msgstr ""
+
+#: inc/modules/theme-colors.php:101
+msgid "Button background on hover."
+msgstr ""
+
+#: inc/modules/theme-colors.php:105
+msgid "Body text"
+msgstr ""
+
+#: inc/modules/theme-colors.php:107
+msgid "Main text colour."
+msgstr ""
+
+#: inc/modules/theme-colors.php:111
+msgid "Header background"
+msgstr ""
+
+#: inc/modules/theme-colors.php:113
+msgid "Background of the sticky site header."
+msgstr ""
+
+#: inc/modules/theme-colors.php:117
+msgid "Card background"
+msgstr ""
+
+#: inc/modules/theme-colors.php:119
+msgid "Background of post cards, articles, widgets and the header menu."
+msgstr ""
+
+#: inc/modules/theme-colors.php:123
+msgid "Borders"
+msgstr ""
+
+#: inc/modules/theme-colors.php:125
+msgid "Hairline borders around cards, inputs and dividers."
+msgstr ""
+
+#: inc/modules/theme-colors.php:133
+msgid "Page background"
+msgstr ""
+
+#: inc/modules/theme-colors.php:134
+msgid "Set the whole-page background. You can use a solid colour (e.g. #f7faf8) or a full CSS gradient."
+msgstr ""
+
+#: inc/modules/theme-colors.php:138
+msgid "Body background"
+msgstr ""
+
+#: inc/modules/theme-colors.php:141
+msgid "A CSS colour or gradient. Examples: <code>#0f172a</code> or <code>linear-gradient(160deg, #0f172a, #1e293b)</code>."
+msgstr ""
+
+#: inc/modules/theme-colors.php:148
+msgid "Typography"
+msgstr ""
+
+#: inc/modules/theme-colors.php:149
+msgid "Choose the font families and base size. The Inter and Playfair Display webfonts only load when you enable Google Fonts below."
+msgstr ""
+
+#: inc/modules/theme-colors.php:153
+msgid "Body font"
+msgstr ""
+
+#: inc/modules/theme-colors.php:157
+msgid "System UI (fastest)"
+msgstr ""
+
+#: inc/modules/theme-colors.php:158
+#: inc/modules/theme-colors.php:170
+msgid "Inter"
+msgstr ""
+
+#: inc/modules/theme-colors.php:160
+msgid "Font used for paragraphs and UI text."
+msgstr ""
+
+#: inc/modules/theme-colors.php:164
+msgid "Heading font"
+msgstr ""
+
+#: inc/modules/theme-colors.php:168
+msgid "Playfair Display (elegant serif)"
+msgstr ""
+
+#: inc/modules/theme-colors.php:169
+msgid "System sans-serif"
+msgstr ""
+
+#: inc/modules/theme-colors.php:172
+msgid "Font used for headings and the brand."
+msgstr ""
+
+#: inc/modules/theme-colors.php:176
+msgid "Base font size (px)"
+msgstr ""
+
+#: inc/modules/theme-colors.php:179
+msgid "Root body font size in pixels. The theme default is 17. Leave blank to keep it."
+msgstr ""
+
+#: inc/modules/theme-colors.php:183
+msgid "Load Google Fonts (Inter + Playfair Display)"
+msgstr ""
+
+#: inc/modules/theme-colors.php:186
+msgid "Off by default for maximum speed. Enable this if you selected Inter or Playfair above so the webfonts actually load."
+msgstr ""
+
+#: inc/modules/theme-colors.php:244
+msgid "Colors & fonts saved."
+msgstr ""
+
+#: inc/modules/theme-colors.php:249
+msgid "Brand the theme in seconds. These options print a handful of CSS variables into the page head, so your palette shows on the very first paint with no flash."
+msgstr ""
+
+#: inc/modules/theme-colors.php:42
+#: inc/modules/theme-colors.php:43
+#: inc/modules/theme-colors.php:62
+#: inc/modules/theme-colors.php:248
+msgid "Colors & Fonts"
+msgstr ""
+
+#: inc/modules/theme-colors.php:63
+msgid "Brand palette and typography"
+msgstr ""
+
+#: inc/modules/theme-colors.php:82
+msgid "Brand colors"
+msgstr ""
+
+#: inc/modules/theme-colors.php:83
+msgid "Pick your palette. Each colour maps to a CSS variable used across the whole theme, so the site re-brands instantly. Leave a field blank to keep the theme default."
+msgstr ""
+
+#: inc/modules/theme-colors.php:87
+msgid "Accent"
+msgstr ""
+
+#: inc/modules/theme-colors.php:89
+msgid "Links, pills, highlights and focus rings. Lighter glow and tint shades are derived from this automatically."
+msgstr ""
+
+#: inc/modules/theme-colors.php:93
+msgid "Button"
+msgstr ""
+
+#: inc/modules/theme-colors.php:95
+msgid "Background colour of primary buttons."
+msgstr ""
+
+#: inc/modules/theme-colors.php:99
+msgid "Button (hover)"
+msgstr ""
+
+#: inc/seo/seo-meta.php:370
+msgid "Themify SEO"
+msgstr ""
+
+#: inc/seo/seo-meta.php:413
+msgid "SEO title"
+msgstr ""
+
+#: inc/seo/seo-meta.php:419
+msgid "Overrides the browser tab title and social title. Aim for under 60 characters."
+msgstr ""
+
+#: inc/seo/seo-meta.php:424
+msgid "Meta description"
+msgstr ""
+
+#: inc/seo/seo-meta.php:428
+msgid "Falls back to the excerpt, then the site tagline."
+msgstr ""
+
+#: inc/seo/seo-meta.php:429
+msgid "The snippet search engines and social networks show. Around 155 characters is ideal."
+msgstr ""
+
+#: inc/seo/seo-meta.php:436
+msgid "e.g. best hiking boots"
+msgstr ""
+
+#: inc/seo/seo-meta.php:437
+msgid "The main phrase you want this content to rank for."
+msgstr ""
+
+#: inc/seo/seo-meta.php:441
+msgid "Social share image"
+msgstr ""
+
+#: inc/seo/seo-meta.php:445
+msgid "Defaults to the featured image"
+msgstr ""
+
+#: inc/seo/seo-meta.php:448
+msgid "The image used when the post is shared on Facebook, X and others. 1200×630 works best."
+msgstr ""
+
+#: inc/seo/seo-meta.php:453
+msgid "Hide this content from search engines (noindex)"
+msgstr ""
+
+#: inc/seo/seo-meta.php:484
+msgid "Select share image"
+msgstr ""
+
+#: inc/seo/seo-meta.php:685
+#: inc/seo/seo-meta.php:686
+#: inc/seo/seo-meta.php:702
+#: inc/seo/seo-meta.php:721
+msgid "SEO"
+msgstr ""
+
+#: inc/seo/seo-meta.php:703
+msgid "Titles, meta, Open Graph, robots & verification"
+msgstr ""
+
+#: inc/seo/seo-meta.php:714
+msgid "Site-wide SEO defaults. Per-post titles, descriptions and images are set in the \"Themify SEO\" box on each post."
+msgstr ""
+
+#: inc/seo/seo-meta.php:717
+msgid "A third-party SEO plugin is active, so Themify's built-in SEO output is turned off to avoid conflicts. These settings are kept but not used on the front end."
+msgstr ""
+
+#: inc/seo/seo-meta.php:727
+msgid "Defaults used across the site and for the homepage."
+msgstr ""
+
+#: inc/seo/seo-meta.php:731
+msgid "Title separator"
+msgstr ""
+
+#: inc/seo/seo-meta.php:735
+msgid "Character shown between the page title and the site name, e.g. Post Title – Site Name."
+msgstr ""
+
+#: inc/seo/seo-meta.php:739
+msgid "Homepage title"
+msgstr ""
+
+#: inc/seo/seo-meta.php:742
+msgid "The full <title> for the front page. Leave blank to use the WordPress default."
+msgstr ""
+
+#: inc/seo/seo-meta.php:746
+msgid "Homepage meta description"
+msgstr ""
+
+#: inc/seo/seo-meta.php:750
+msgid "Description used for the front page. Falls back to the site tagline."
+msgstr ""
+
+#: inc/seo/seo-meta.php:754
+msgid "Default social image"
+msgstr ""
+
+#: inc/seo/seo-meta.php:756
+msgid "Used for sharing when a post has no share image and no featured image. 1200×630 recommended."
+msgstr ""
+
+#: inc/seo/seo-meta.php:760
+msgid "X / Twitter username"
+msgstr ""
+
+#: inc/seo/seo-meta.php:763
+msgid "Added as twitter:site on shared pages. The @ is optional."
+msgstr ""
+
+#: inc/seo/seo-meta.php:768
+msgid "Indexing & robots"
+msgstr ""
+
+#: inc/seo/seo-meta.php:769
+msgid "Control which pages search engines are allowed to index."
+msgstr ""
+
+#: inc/seo/seo-meta.php:773
+msgid "Noindex tag, category, author and date archives"
+msgstr ""
+
+#: inc/seo/seo-meta.php:776
+msgid "Keeps thin archive pages out of search results while still following their links."
+msgstr ""
+
+#: inc/seo/seo-meta.php:780
+msgid "Noindex internal search result pages"
+msgstr ""
+
+#: inc/seo/seo-meta.php:783
+msgid "Recommended. Search result pages are low value for search engines."
+msgstr ""
+
+#: inc/seo/seo-meta.php:788
+msgid "Site verification"
+msgstr ""
+
+#: inc/seo/seo-meta.php:789
+msgid "Paste the verification code (or the full meta tag) from each service to prove ownership."
+msgstr ""
+
+#: inc/seo/seo-meta.php:793
+msgid "Google Search Console"
+msgstr ""
+
+#: inc/seo/seo-meta.php:795
+msgid "google-site-verification code"
+msgstr ""
+
+#: inc/seo/seo-meta.php:799
+msgid "Bing Webmaster Tools"
+msgstr ""
+
+#: inc/seo/seo-meta.php:801
+msgid "msvalidate.01 code"
+msgstr ""
+
+#: inc/seo/seo-meta.php:807
+msgid "p:domain_verify code"
+msgstr ""
+
+#: inc/seo/seo-meta.php:811
+msgid "Yandex"
+msgstr ""
+
+#: inc/seo/seo-meta.php:813
+msgid "yandex-verification code"
+msgstr ""
+
+#: inc/setup.php:43
+msgid "Primary Menu (Header)"
+msgstr ""
+
+#: inc/setup.php:44
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/setup.php:59
+msgid "Blog Sidebar"
+msgstr ""
+
+#: inc/setup.php:61
+msgid "Shown alongside blog posts and archives."
+msgstr ""
+
+#: inc/setup.php:71
+msgid "Footer Column %d"
+msgstr ""
+
+#: inc/template-tags.php:104
+msgid "Breadcrumb"
+msgstr ""
+
+#: inc/template-tags.php:123
+msgid "Home"
+msgstr ""
+
+#: inc/template-tags.php:141
+msgid "Search: %s"
+msgstr ""
+
+#: inc/template-tags.php:199
+msgid "Table of contents"
+msgstr ""
+
+#: inc/template-tags.php:200
+msgid "Contents"
+msgstr ""
+
+#: inc/template-tags.php:45
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:51
+msgid "by"
+msgstr ""
+
+#: inc/template-tags.php:85
+msgid "‹ Prev"
+msgstr ""
+
+#: inc/template-tags.php:86
+msgid "Next ›"
+msgstr ""
+
+#: inc/template-tags.php:87
+msgid "Posts navigation"
+msgstr ""
+
+#: page.php:53
+msgid "Page sections"
+msgstr ""
+
+#: page.php:53
+#: single.php:59
+msgid "Pages:"
+msgstr ""
+
+#: search.php:31
+msgid "Search results for: %s"
+msgstr ""
+
+#: searchform.php:17
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:24
+msgid "Search&hellip;"
+msgstr ""
+
+#: searchform.php:27
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:24
+msgid "Blog sidebar"
+msgstr ""
+
+#: single.php:59
+msgid "Post pages"
+msgstr ""
+
+#: single.php:92
+#: single.php:93
+msgid "Related posts"
+msgstr ""
+
+#: template-parts/content-none.php:18
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid "Sorry, nothing matched your search. Try different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:27
+msgid "It looks like there is nothing here yet. Try a search to find what you are looking for."
+msgstr ""
+

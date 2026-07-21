@@ -1,0 +1,22 @@
+/*
+Theme Name: Themixify
+Theme URI: https://themify.example/
+Author: Themixify
+Author URI: https://themify.example/
+Description: Themixify — the fast, beautiful, SEO-first blogging & affiliate WordPress theme. Ships with a built-in growth suite: Google Analytics (GA4) + Search Console dashboard, IndexNow + Google Indexing, SerpAPI rank tracker, on-demand SEO health audit, header/footer/body code injection, live color & typography customizer, global + per-post custom CSS, homepage block builder, affiliate link manager (cloaking + rel control), and an AI article writer. Engineered for a perfect 100/100 PageSpeed score on mobile and desktop.
+Version: 1.11.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: themify
+Tags: blog, news, two-columns, right-sidebar, custom-colors, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, block-styles, wide-blocks, editor-style, affiliate, seo
+*/
+
+/*
+  This file only carries the WordPress theme header. All real styles live in
+  assets/css/main.css (enqueued in inc/enqueue.php) so the browser gets one
+  cacheable, minifiable stylesheet on the critical path instead of the giant
+  style.css WordPress would otherwise treat as the main sheet.
+*/
