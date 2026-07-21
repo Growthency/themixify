@@ -69,7 +69,7 @@ function themify_render_related_inline() {
 	}
 
 	echo '<aside class="tf-relbox" aria-label="' . esc_attr__( 'Related', 'themify' ) . '">';
-	echo '<h4 class="tf-relbox__heading">' . esc_html__( 'Related', 'themify' ) . '</h4>';
+	echo '<h3 class="tf-relbox__heading">' . esc_html__( 'Related', 'themify' ) . '</h3>';
 	echo '<div class="tf-relbox__grid">';
 	foreach ( array_slice( $posts, 0, 3 ) as $rel ) {
 		$cats = get_the_category( $rel->ID );
