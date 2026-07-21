@@ -942,3 +942,10 @@ body.tf-postbar-bottom-open .tf-share { bottom: 92px; }
 /* YouTube subscribe: white on pure #ff0000 was 4.0:1 — deepen to pass. */
 .tf-youtube__btn:not(.tf-youtube__btn--ghost) { background: #c40000; box-shadow: 0 8px 22px rgba(196, 0, 0, 0.32); }
 .tf-youtube__btn:not(.tf-youtube__btn--ghost):hover { background: #a80000; }
+
+/* Footer dark-mode (set by main.js after measuring the real rendered bg). */
+.tf-site-footer.tf-footer--dark,
+.tf-site-footer.tf-footer--dark .widget-title,
+.tf-site-footer.tf-footer--dark .tf-footer-bottom { color: #ffffff; }
+.tf-site-footer.tf-footer--dark a:not(.tf-btn):not(.tf-youtube__btn) { color: rgba(255, 255, 255, 0.92); }
+.tf-site-footer.tf-footer--dark a:not(.tf-btn):not(.tf-youtube__btn):hover { color: #ffffff; text-decoration: underline; }

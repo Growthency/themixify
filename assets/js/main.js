@@ -423,3 +423,31 @@
 
 	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
 })();
+
+/* Footer contrast guard — measure the footer's real background (wherever it
+   came from: theme vars, Customizer or Custom CSS) and flip to light text
+   when it is dark. */
+(function () {
+	function lum(c) {
+		c = parseFloat(c) / 255;
+		return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+	}
+	function boot() {
+		var f = document.querySelector('.tf-site-footer');
+		if (!f) { return; }
+		var el = f, bg = null, m = null, a = 0;
+		// Walk up until we find a non-transparent background.
+		while (el && el !== document.documentElement) {
+			bg = getComputedStyle(el).backgroundColor || '';
+			m = bg.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:[,\s]+([\d.]+))?\s*\)/);
+			a = m ? (m[4] === undefined ? 1 : parseFloat(m[4])) : 0;
+			if (m && a >= 0.5) { break; }
+			m = null;
+			el = el.parentElement;
+		}
+		if (!m) { return; }
+		var L = 0.2126 * lum(m[1]) + 0.7152 * lum(m[2]) + 0.0722 * lum(m[3]);
+		f.classList.toggle('tf-footer--dark', L < 0.35);
+	}
+	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
+})();
