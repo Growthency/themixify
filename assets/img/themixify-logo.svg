@@ -8,7 +8,8 @@
 		</linearGradient>
 	</defs>
 	<rect x="34" y="34" width="956" height="956" rx="218" fill="url(#g)"/>
-	<path d="M 306 356 L 646 356" fill="none" stroke="#ffffff" stroke-width="98" stroke-linecap="round"/>
-	<path d="M 476 356 L 476 742" fill="none" stroke="#ffffff" stroke-width="98" stroke-linecap="round"/>
-	<circle cx="756" cy="300" r="54" fill="#ffffff"/>
+	<path d="M 168 362 L 446 362" fill="none" stroke="#ffffff" stroke-width="84" stroke-linecap="round"/>
+	<path d="M 307 362 L 307 738" fill="none" stroke="#ffffff" stroke-width="84" stroke-linecap="round"/>
+	<path d="M 538 738 L 538 362 L 690 570 L 842 362 L 842 738" fill="none" stroke="#ffffff" stroke-width="84" stroke-linecap="round" stroke-linejoin="round"/>
+	<circle cx="842" cy="250" r="50" fill="#ffffff"/>
 </svg>
