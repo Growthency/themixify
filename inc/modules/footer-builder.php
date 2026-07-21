@@ -548,9 +548,15 @@ function themify_render_payment_badges() {
 
 	echo '<div class="tf-payment-badges">';
 	foreach ( $badges as $url ) {
+		$src = esc_url( $url );
+		// A stored URL can survive the getter yet still escape to '' (bad
+		// scheme etc.) — never print a broken, unsized <img src="">.
+		if ( '' === $src ) {
+			continue;
+		}
 		printf(
-			'<img src="%s" alt="%s" height="26" loading="lazy" decoding="async" />',
-			esc_url( $url ),
+			'<img src="%s" alt="%s" width="40" height="26" style="width:auto;" loading="lazy" decoding="async" />',
+			$src, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- esc_url'd above.
 			esc_attr__( 'Accepted payment method', 'themify' )
 		);
 	}
