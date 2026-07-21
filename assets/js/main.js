@@ -353,12 +353,24 @@
 		var cfg = window.tfImgShare;
 		if (!cfg || !cfg.networks || !cfg.networks.length) { return; }
 
-		var imgs = document.querySelectorAll('.tf-content img, .tf-article__hero img');
+		// Every image on the page — home, category grids, sidebars, content.
+		var imgs = document.querySelectorAll('img');
 		for (var i = 0; i < imgs.length; i++) { wrap(imgs[i], cfg); }
 	}
 
 	function wrap(img, cfg) {
-		if (img.closest('.tf-imgshare') || img.width < 200) { return; }
+		if (img.closest('.tf-imgshare') || img.closest('.tf-site-header') || img.closest('.tf-postbar') || img.closest('#wpadminbar')) { return; }
+		var w = img.width || img.naturalWidth || 0;
+		if (w < 200) {
+			// Lazy images report 0 before loading — retry once they have a size.
+			if (!img.complete) {
+				img.addEventListener('load', function once() {
+					img.removeEventListener('load', once);
+					wrap(img, cfg);
+				});
+			}
+			return;
+		}
 
 		var holder = document.createElement('span');
 		holder.className = 'tf-imgshare';
