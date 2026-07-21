@@ -97,32 +97,18 @@ get_header();
 						themify_article_share_row( 'bottom' );
 					}
 
-					// Related posts by shared taxonomy — only render if any exist.
-					$themify_related = themify_related_posts( 3 );
-					if ( ! empty( $themify_related ) ) :
-						?>
-						<section class="tf-related" aria-label="<?php esc_attr_e( 'Related posts', 'themify' ); ?>">
-							<h2 class="tf-related__title"><?php esc_html_e( 'Related posts', 'themify' ); ?></h2>
-							<div class="tf-grid">
-								<?php foreach ( $themify_related as $themify_related_post ) : ?>
-									<article class="tf-card-post">
-										<?php if ( has_post_thumbnail( $themify_related_post ) ) : ?>
-											<a class="tf-card-post__thumb" href="<?php echo esc_url( get_permalink( $themify_related_post ) ); ?>" aria-hidden="true" tabindex="-1">
-												<?php echo get_the_post_thumbnail( $themify_related_post, 'themify-card' ); // phpcs:ignore WordPress.Security.EscapeOutput -- Core markup with escaped attributes. ?>
-											</a>
-										<?php endif; ?>
-										<div class="tf-card-post__body">
-											<h3 class="tf-card-post__title">
-												<a href="<?php echo esc_url( get_permalink( $themify_related_post ) ); ?>"><?php echo esc_html( get_the_title( $themify_related_post ) ); ?></a>
-											</h3>
-											<p class="tf-card-post__excerpt"><?php echo esc_html( wp_trim_words( get_the_excerpt( $themify_related_post ), 18 ) ); ?></p>
-										</div>
-									</article>
-								<?php endforeach; ?>
-							</div>
-						</section>
-						<?php
-					endif;
+					// Post-footer sections — "Related" text box, previous/next
+					// navigation, then the "Similar Posts" carousel. Each is
+					// individually toggleable under Themixify → General.
+					if ( function_exists( 'themify_render_related_inline' ) ) {
+						themify_render_related_inline();
+					}
+					if ( function_exists( 'themify_render_post_nav' ) ) {
+						themify_render_post_nav();
+					}
+					if ( function_exists( 'themify_render_similar_posts' ) ) {
+						themify_render_similar_posts();
+					}
 
 					// Comments.
 					if ( comments_open() || get_comments_number() ) {

@@ -247,3 +247,70 @@
 		} );
 	}
 } )();
+
+/* Similar Posts carousel — arrows, dots, snap paging. */
+(function () {
+	function initSimilar(section) {
+		var viewport = section.querySelector('.tf-similar__viewport');
+		var dotsWrap = section.querySelector('.tf-similar__dots');
+		var prev = section.querySelector('.tf-similar__arrow--prev');
+		var next = section.querySelector('.tf-similar__arrow--next');
+		if (!viewport) { return; }
+
+		function pageCount() {
+			return Math.max(1, Math.round(viewport.scrollWidth / viewport.clientWidth));
+		}
+		function currentPage() {
+			return Math.min(pageCount() - 1, Math.round(viewport.scrollLeft / viewport.clientWidth));
+		}
+		function goTo(page) {
+			viewport.scrollTo({ left: page * viewport.clientWidth, behavior: 'smooth' });
+		}
+		function buildDots() {
+			if (!dotsWrap) { return; }
+			dotsWrap.innerHTML = '';
+			var n = pageCount();
+			for (var i = 0; i < n; i++) {
+				var b = document.createElement('button');
+				b.type = 'button';
+				b.className = 'tf-similar__dot' + (i === currentPage() ? ' is-active' : '');
+				b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+				(function (idx) { b.addEventListener('click', function () { goTo(idx); }); })(i);
+				dotsWrap.appendChild(b);
+			}
+			if (n < 2) { dotsWrap.style.display = 'none'; if (prev) { prev.style.display = 'none'; } if (next) { next.style.display = 'none'; } }
+			else { dotsWrap.style.display = ''; if (prev) { prev.style.display = ''; } if (next) { next.style.display = ''; } }
+		}
+		function syncDots() {
+			if (!dotsWrap) { return; }
+			var cur = currentPage();
+			var dots = dotsWrap.children;
+			for (var i = 0; i < dots.length; i++) {
+				dots[i].classList.toggle('is-active', i === cur);
+			}
+		}
+
+		if (prev) { prev.addEventListener('click', function () { goTo(Math.max(0, currentPage() - 1)); }); }
+		if (next) { next.addEventListener('click', function () { goTo(Math.min(pageCount() - 1, currentPage() + 1)); }); }
+
+		var scrollT;
+		viewport.addEventListener('scroll', function () {
+			clearTimeout(scrollT);
+			scrollT = setTimeout(syncDots, 80);
+		}, { passive: true });
+
+		var resizeT;
+		window.addEventListener('resize', function () {
+			clearTimeout(resizeT);
+			resizeT = setTimeout(buildDots, 150);
+		});
+
+		buildDots();
+	}
+
+	function boot() {
+		var sections = document.querySelectorAll('.tf-similar');
+		for (var i = 0; i < sections.length; i++) { initSimilar(sections[i]); }
+	}
+	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
+})();

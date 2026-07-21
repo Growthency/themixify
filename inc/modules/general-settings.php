@@ -157,6 +157,27 @@ function themify_general_settings_page() {
 						'default' => '1',
 					),
 					array(
+						'key'     => 'related_inline_enabled',
+						'label'   => __( '"Related" links box after posts', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'The compact grey box with three related-post links at the end of every article.', 'themify' ),
+					),
+					array(
+						'key'     => 'post_nav_enabled',
+						'label'   => __( 'Previous / Next post navigation', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'Two-column links to the previous and next article, shown after the Related box.', 'themify' ),
+					),
+					array(
+						'key'     => 'similar_posts_enabled',
+						'label'   => __( '"Similar Posts" carousel', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'The sliding card carousel (arrows + dots) at the very end of every article.', 'themify' ),
+					),
+					array(
 						'key'         => 'excerpt_length',
 						'label'       => __( 'Excerpt length (words)', 'themify' ),
 						'type'        => 'number',
