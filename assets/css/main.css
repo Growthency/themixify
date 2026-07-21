@@ -887,3 +887,22 @@ a.tf-postnav__item:hover .tf-postnav__title { color: var(--tf-accent); }
 .tf-share, .tf-back-to-top { transition: bottom 0.28s ease, opacity 0.25s ease, transform 0.25s ease, visibility 0.25s; }
 body.tf-postbar-bottom-open .tf-back-to-top,
 body.tf-postbar-bottom-open .tf-share { bottom: 92px; }
+
+/* -------------------------------------------------------------------------
+ * Accessible color contrast (WCAG AA) — auto-darkened accent for text uses.
+ * The accent stays the brand color for buttons/fills; for TEXT on white or
+ * on the accent tint we use a darker mix so every pairing clears 4.5:1,
+ * whatever accent the owner picks in Colors & Fonts.
+ * ---------------------------------------------------------------------- */
+:root { --tf-accent-ink: var(--tf-accent); }
+@supports (color: color-mix(in srgb, red 50%, black)) {
+	:root { --tf-accent-ink: color-mix(in srgb, var(--tf-accent) 68%, #000); }
+}
+/* Meta text (date, read time, author) was too light at 46% ink. */
+:root { --tf-text-faint: rgba(8, 26, 12, 0.62); }
+
+.tf-pill { color: var(--tf-accent-ink); }
+.tf-menu a:hover, .tf-menu .current-menu-item > a { color: var(--tf-accent-ink); }
+.tf-meta a { color: var(--tf-accent-ink); }
+.tf-meta a:hover { color: var(--tf-accent); }
+.tf-breadcrumbs a { color: var(--tf-accent-ink); }
