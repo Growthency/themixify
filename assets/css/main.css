@@ -177,6 +177,18 @@ th { background: var(--tf-accent-bg); font-weight: 600; }
 }
 .tf-menu li { position: relative; }
 .tf-menu li:hover > .sub-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+/* Nested sub-menus (any depth): open to the RIGHT of the parent dropdown item
+   instead of dropping down over it. Hover chain works at every level. */
+.tf-menu .sub-menu .sub-menu {
+	left: 100%; top: -9px; margin: 0 0 0 4px;
+	transform: translateX(6px);
+}
+.tf-menu .sub-menu li:hover > .sub-menu { transform: translateX(0); }
+.tf-menu .sub-menu a { display: block; }
+/* Small "has children" arrow on dropdown items that open a further level. */
+.tf-menu .sub-menu .menu-item-has-children > a::after {
+	content: "\203A"; float: right; margin-left: 10px; opacity: 0.55; font-weight: 700;
+}
 .tf-nav-toggle {
 	display: none; width: 44px; height: 44px; border: 1px solid var(--tf-border);
 	background: var(--tf-bg-card); border-radius: var(--tf-radius-sm); cursor: pointer;
@@ -703,6 +715,9 @@ label { font-weight: 500; }
 	}
 	.tf-menu.is-open { transform: translateY(0); }
 	.tf-menu .sub-menu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; border: 0; padding-left: 16px; margin: 0; }
+	/* Nested levels stack with extra indent on mobile — no sideways flyout. */
+	.tf-menu .sub-menu .sub-menu { left: auto; top: auto; margin: 0; transform: none; }
+	.tf-menu .sub-menu .menu-item-has-children > a::after { content: ""; }
 }
 
 /* Print */

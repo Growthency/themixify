@@ -86,7 +86,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'menu_class'     => 'tf-menu',
 				'container'      => false,
 				'fallback_cb'    => false,
-				'depth'          => 2,
+				'depth'          => 0, // unlimited — nested sub-menus fly out sideways (CSS).
 			) );
 
 			// Optional header search (Themixify → General → Header search bar).
