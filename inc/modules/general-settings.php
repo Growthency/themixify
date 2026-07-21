@@ -121,6 +121,20 @@ function themify_general_settings_page() {
 				'desc'   => __( 'Control the reading experience across the blog and single posts.', 'themify' ),
 				'fields' => array(
 					array(
+						'key'         => 'container_width',
+						'label'       => __( 'Site width (px)', 'themify' ),
+						'type'        => 'number',
+						'placeholder' => '1200',
+						'desc'        => __( 'How wide the whole site is. Default 1200. Feeling cramped? Try 1360–1500. Blank or 0 = default.', 'themify' ),
+					),
+					array(
+						'key'         => 'sidebar_width',
+						'label'       => __( 'Sidebar width (px)', 'themify' ),
+						'type'        => 'number',
+						'placeholder' => '320',
+						'desc'        => __( 'Width of the article sidebar column. Default 320. Smaller sidebar = wider article. Blank or 0 = default.', 'themify' ),
+					),
+					array(
 						'key'     => 'blog_layout',
 						'label'   => __( 'Blog layout', 'themify' ),
 						'type'    => 'select',
@@ -240,6 +254,34 @@ function themify_general_settings_page() {
 		),
 	) );
 }
+
+/**
+ * Print the owner's custom layout widths as a tiny CSS override in <head>.
+ * The whole layout is driven by the --tf-maxw variable and the sidebar grid
+ * column, so two numbers are all that is needed. Nothing prints when the
+ * options are unset, keeping the stylesheet untouched by default.
+ */
+function themify_layout_width_css() {
+	if ( is_admin() ) {
+		return;
+	}
+
+	$maxw    = (int) themify_get_option( 'container_width', 0 );
+	$sidebar = (int) themify_get_option( 'sidebar_width', 0 );
+
+	$css = '';
+	if ( $maxw >= 700 && $maxw <= 2400 ) {
+		$css .= ':root{--tf-maxw:' . $maxw . 'px;}';
+	}
+	if ( $sidebar >= 200 && $sidebar <= 600 ) {
+		$css .= '@media(min-width:901px){.tf-has-sidebar .tf-layout{grid-template-columns:minmax(0,1fr) ' . $sidebar . 'px;}}';
+	}
+
+	if ( '' !== $css ) {
+		echo '<style id="themify-layout-widths">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built only from bounded integers.
+	}
+}
+add_action( 'wp_head', 'themify_layout_width_css', 40 );
 
 /**
  * Apply the configured excerpt length to WordPress excerpts.
