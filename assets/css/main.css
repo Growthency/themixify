@@ -259,7 +259,7 @@ th { background: var(--tf-accent-bg); font-weight: 600; }
 /* ============================================================ 8. CARDS */
 /* Fixed column counts so rows always fill completely at any container width
    (auto-fill used to add a 4th/5th column on wide layouts, leaving empty slots). */
-.tf-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tf-gap); }
+.tf-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--tf-gap); }
 @media (max-width: 1024px) { .tf-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 620px) { .tf-grid { grid-template-columns: 1fr; } }
 .tf-card-post {

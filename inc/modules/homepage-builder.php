@@ -288,7 +288,7 @@ function themify_render_homepage_default() {
 		'type'    => 'posts_grid',
 		'heading' => __( 'Latest posts', 'themify' ),
 		'source'  => 'latest',
-		'count'   => 7,
+		'count'   => 9,
 	) ) );
 
 	// Popular posts (by view count) in the same featured + grid layout.
@@ -296,7 +296,7 @@ function themify_render_homepage_default() {
 		'type'    => 'posts_grid',
 		'heading' => __( 'Popular posts', 'themify' ),
 		'source'  => 'popular',
-		'count'   => 7,
+		'count'   => 9,
 	) ) );
 
 	// A category showcase so the front page feels designed even with zero setup.
