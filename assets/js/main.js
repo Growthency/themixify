@@ -320,6 +320,7 @@
 	function boot() {
 		var bars = document.querySelectorAll('.tf-postbar');
 		if (!bars.length) { return; }
+		var hasBottom = !!document.querySelector('.tf-postbar--bottom');
 		var shown = false;
 		function onScroll() {
 			var y = window.scrollY || document.documentElement.scrollTop || 0;
@@ -329,6 +330,8 @@
 				for (var i = 0; i < bars.length; i++) {
 					bars[i].classList.toggle('is-visible', v);
 				}
+				// Lift the floating share / back-to-top buttons above the bottom bar.
+				document.body.classList.toggle('tf-postbar-bottom-open', v && hasBottom);
 			}
 		}
 		window.addEventListener('scroll', onScroll, { passive: true });

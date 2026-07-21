@@ -882,3 +882,8 @@ a.tf-postnav__item:hover .tf-postnav__title { color: var(--tf-accent); }
 	to   { transform: translateX(-50%); }
 }
 @media (prefers-reduced-motion: reduce) { .tf-postbar__inner { animation: none; } }
+
+/* Lift the floating buttons above the bottom posts bar while it is open */
+.tf-share, .tf-back-to-top { transition: bottom 0.28s ease, opacity 0.25s ease, transform 0.25s ease, visibility 0.25s; }
+body.tf-postbar-bottom-open .tf-back-to-top,
+body.tf-postbar-bottom-open .tf-share { bottom: 92px; }
