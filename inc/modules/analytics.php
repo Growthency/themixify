@@ -130,8 +130,24 @@ function themify_ga4_print_snippet() {
 		. "gtag('config', '" . esc_js( $id ) . "');";
 
 	echo "\n<!-- Themify: Google Analytics 4 -->\n";
-	printf( '<script async src="%s"></script>' . "\n", $src ); // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript -- gtag loader is intentionally a raw async tag so performance.php can manage it.
-	printf( '<script>%s</script>' . "\n", $js ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $js is built from an escaped, charset-validated id only.
+
+	if ( themify_is_enabled( 'ga4_delay', true ) ) {
+		// Delayed loader: the config queue starts immediately (nothing is
+		// lost), but the heavy gtag.js only loads on the first interaction or
+		// after 3.5s — keeping it out of the critical path entirely.
+		$loader = $js
+			. '(function(){var d=false;function l(){if(d)return;d=true;'
+			. 'var s=document.createElement("script");s.src="' . esc_js( $src ) . '";s.async=true;document.head.appendChild(s);}'
+			. 'var t=setTimeout(l,3500);'
+			. '["scroll","click","touchstart","keydown","mousemove"].forEach(function(e){'
+			. 'window.addEventListener(e,function h(){clearTimeout(t);l();window.removeEventListener(e,h);},{passive:true,once:true});'
+			. '});})();';
+		printf( '<script>%s</script>' . "\n", $loader ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from escaped id/url only.
+	} else {
+		printf( '<script async src="%s"></script>' . "\n", $src ); // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript -- gtag loader is intentionally a raw async tag so performance.php can manage it.
+		printf( '<script>%s</script>' . "\n", $js ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- $js is built from an escaped, charset-validated id only.
+	}
+
 	echo "<!-- /Themify: Google Analytics 4 -->\n";
 }
 add_action( 'wp_head', 'themify_ga4_print_snippet', 20 );
@@ -881,6 +897,7 @@ function themify_analytics_fields() {
 	return array(
 		array( 'key' => 'ga4_id', 'type' => 'text' ),
 		array( 'key' => 'ga4_enabled', 'type' => 'checkbox' ),
+		array( 'key' => 'ga4_delay', 'type' => 'checkbox' ),
 		array( 'key' => 'google_sa_email', 'type' => 'email' ),
 		array( 'key' => 'google_sa_key', 'type' => 'code' ),
 		array( 'key' => 'ga4_property_id', 'type' => 'text' ),
@@ -1654,6 +1671,13 @@ function themify_analytics_render_settings_form() {
 		'label'   => __( 'Load GA4 on the site', 'themify' ),
 		'type'    => 'checkbox',
 		'default' => '',
+	) );
+	themify_render_field( array(
+		'key'     => 'ga4_delay',
+		'label'   => __( 'Delay GA4 until interaction (faster PageSpeed)', 'themify' ),
+		'type'    => 'checkbox',
+		'default' => '1',
+		'desc'    => __( 'Loads the Google tag on the first scroll/click or after 3.5s instead of blocking the initial render. No data is lost.', 'themify' ),
 	) );
 	echo '</div>';
 

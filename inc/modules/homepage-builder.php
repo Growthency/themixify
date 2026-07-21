@@ -144,6 +144,38 @@ function themify_normalise_homepage_block( array $block ) {
  * ---------------------------------------------------------------------- */
 
 /**
+ * The first hero banner image URL (custom blocks first, else the automatic
+ * hero) — this is the homepage's LCP element.
+ *
+ * @return string Image URL or ''.
+ */
+function themify_hero_first_banner() {
+	foreach ( themify_get_homepage_blocks() as $block ) {
+		if ( 'hero' === $block['type'] ) {
+			return ! empty( $block['banners'][0] ) ? (string) $block['banners'][0] : '';
+		}
+	}
+	$hero = themify_get_hero();
+	return ! empty( $hero['banners'][0] ) ? (string) $hero['banners'][0] : '';
+}
+
+/**
+ * Preload the first hero banner with high priority. It renders as a CSS
+ * background, so without this hint the browser only discovers it after CSS
+ * parses — the single biggest LCP delay on the homepage.
+ */
+function themify_preload_hero_banner() {
+	if ( is_admin() || ! is_front_page() ) {
+		return;
+	}
+	$url = themify_hero_first_banner();
+	if ( '' !== $url ) {
+		printf( '<link rel="preload" as="image" href="%s" fetchpriority="high">' . "\n", esc_url( $url ) );
+	}
+}
+add_action( 'wp_head', 'themify_preload_hero_banner', 4 );
+
+/**
  * Render the whole homepage. Called by front-page.php.
  *
  * If any blocks are configured, they are rendered in stored order; each is

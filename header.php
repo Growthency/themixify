@@ -35,11 +35,36 @@ if ( ! defined( 'ABSPATH' ) ) {
 				if ( $themify_logo_h < 1 ) {
 					$themify_logo_h = 56;
 				}
+
+				// Intrinsic dimensions (cached) so the logo never counts as an
+				// unsized image; the attributes give the browser its aspect ratio.
+				$themify_logo_dims = get_transient( 'themify_logo_dims' );
+				if ( ! is_array( $themify_logo_dims ) || ( $themify_logo_dims['url'] ?? '' ) !== $themify_logo ) {
+					$themify_logo_dims = array(
+						'url' => $themify_logo,
+						'w'   => 0,
+						'h'   => 0,
+					);
+					$themify_logo_id = attachment_url_to_postid( $themify_logo );
+					if ( $themify_logo_id ) {
+						$themify_logo_src = wp_get_attachment_image_src( $themify_logo_id, 'full' );
+						if ( $themify_logo_src ) {
+							$themify_logo_dims['w'] = (int) $themify_logo_src[1];
+							$themify_logo_dims['h'] = (int) $themify_logo_src[2];
+						}
+					}
+					set_transient( 'themify_logo_dims', $themify_logo_dims, WEEK_IN_SECONDS );
+				}
+				$themify_logo_attrs = ( $themify_logo_dims['w'] > 0 && $themify_logo_dims['h'] > 0 )
+					? sprintf( ' width="%d" height="%d"', (int) $themify_logo_dims['w'], (int) $themify_logo_dims['h'] )
+					: '';
+
 				printf(
-					'<a class="tf-brand tf-brand--logo" href="%s" rel="home"><img src="%s" alt="%s" style="max-height:%dpx;width:auto;" /></a>',
+					'<a class="tf-brand tf-brand--logo" href="%s" rel="home"><img src="%s" alt="%s"%s style="max-height:%dpx;width:auto;" /></a>',
 					esc_url( home_url( '/' ) ),
 					esc_url( $themify_logo ),
 					esc_attr( get_bloginfo( 'name' ) ),
+					$themify_logo_attrs, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- built from bounded integers.
 					$themify_logo_h
 				);
 			} elseif ( has_custom_logo() ) {

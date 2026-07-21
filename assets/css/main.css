@@ -251,9 +251,9 @@ th { background: var(--tf-accent-bg); font-weight: 600; }
 .tf-slider__nav--prev { left: clamp(10px, 3vw, 28px); }
 .tf-slider__nav--next { right: clamp(10px, 3vw, 28px); }
 .tf-slider__dots { position: absolute; left: 50%; bottom: 20px; transform: translateX(-50%); z-index: 3; display: flex; gap: 9px; }
-.tf-slider__dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 999px; cursor: pointer; background: rgba(255, 255, 255, 0.5); transition: all 0.2s var(--tf-ease); }
-.tf-slider__dot:hover { background: rgba(255, 255, 255, 0.8); }
-.tf-slider__dot.is-active { background: #fff; width: 28px; }
+.tf-slider__dot { width: 24px; height: 24px; padding: 7px; border: 0; border-radius: 999px; cursor: pointer; background: rgba(255, 255, 255, 0.5); background-clip: content-box; transition: all 0.2s var(--tf-ease); }
+.tf-slider__dot:hover { background: rgba(255, 255, 255, 0.8); background-clip: content-box; }
+.tf-slider__dot.is-active { background: #fff; background-clip: content-box; width: 42px; }
 @media (max-width: 600px) { .tf-slider__nav { display: none; } }
 
 /* ============================================================ 8. CARDS */
