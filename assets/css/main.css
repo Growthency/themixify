@@ -862,3 +862,23 @@ a.tf-postnav__item:hover .tf-postnav__title { color: var(--tf-accent); }
 .tf-imgshare__btn:hover { transform: scale(1.08); filter: brightness(1.08); }
 .tf-imgshare__btn svg { width: 20px; height: 20px; fill: currentColor; display: block; }
 .tf-imgshare__btn span { font-size: 17px; font-weight: 800; line-height: 1; }
+
+/* Post bar: bottom position + marquee auto-scroll */
+.tf-postbar--bottom {
+	top: auto; bottom: 0;
+	transform: translateY(110%);
+	box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+}
+.tf-postbar--bottom.is-visible { transform: translateY(0); }
+.tf-postbar--marquee .tf-postbar__track { overflow: hidden; }
+.tf-postbar__inner {
+	display: flex; align-items: center; gap: 22px; width: max-content;
+	animation: tfPostbarScroll var(--tf-postbar-dur, 60s) linear infinite;
+	padding-right: 22px;
+}
+.tf-postbar--marquee:hover .tf-postbar__inner { animation-play-state: paused; }
+@keyframes tfPostbarScroll {
+	from { transform: translateX(0); }
+	to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) { .tf-postbar__inner { animation: none; } }

@@ -196,7 +196,32 @@ function themify_general_settings_page() {
 						'label'   => __( 'Sticky trending-posts bar', 'themify' ),
 						'type'    => 'checkbox',
 						'default' => '1',
-						'desc'    => __( 'A slim bar of 10 popular posts that slides down from the top once the visitor scrolls.', 'themify' ),
+						'desc'    => __( 'A slim bar of popular posts that slides in once the visitor scrolls.', 'themify' ),
+					),
+					array(
+						'key'     => 'postbar_position',
+						'label'   => __( 'Posts bar position', 'themify' ),
+						'type'    => 'select',
+						'default' => 'bottom',
+						'options' => array(
+							'bottom' => __( 'Bottom of the screen', 'themify' ),
+							'top'    => __( 'Top of the screen', 'themify' ),
+						),
+						'desc'    => __( 'Where the bar slides in from.', 'themify' ),
+					),
+					array(
+						'key'         => 'postbar_count',
+						'label'       => __( 'Posts bar: how many posts', 'themify' ),
+						'type'        => 'number',
+						'placeholder' => '10',
+						'desc'        => __( 'How many posts to show in the bar. 0 or blank = every post.', 'themify' ),
+					),
+					array(
+						'key'     => 'postbar_marquee',
+						'label'   => __( 'Posts bar auto-scroll', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'Posts glide slowly right-to-left in an endless loop (pauses on hover). Turn off for a still, swipeable bar.', 'themify' ),
 					),
 					array(
 						'key'         => 'excerpt_length',
