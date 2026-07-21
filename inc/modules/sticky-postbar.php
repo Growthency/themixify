@@ -21,14 +21,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * The posts shown in the bar: most-viewed first, recent as top-up.
+ * The posts shown in a bar.
  *
- * @param int $count How many posts.
+ * @param int    $count  How many posts.
+ * @param string $source 'popular' (most-viewed, recent top-up) or 'latest'.
  * @return WP_Post[]
  */
-function themify_postbar_posts( $count = 10 ) {
+function themify_postbar_posts( $count = 10, $source = 'popular' ) {
 	$count   = max( 1, (int) $count );
 	$exclude = is_singular( 'post' ) ? array( get_the_ID() ) : array();
+
+	if ( 'latest' === $source ) {
+		return get_posts( array(
+			'post_type'           => 'post',
+			'post_status'         => 'publish',
+			'posts_per_page'      => $count,
+			'post__not_in'        => $exclude,
+			'ignore_sticky_posts' => true,
+		) );
+	}
 
 	$popular = get_posts( array(
 		'post_type'           => 'post',
@@ -81,15 +92,53 @@ function themify_postbar_item_html( $post_item ) {
 }
 
 /**
- * Print the sticky bar markup in the footer (front-end only). main.js shows
- * and hides it on scroll via the .is-visible class.
+ * Print one bar (top or bottom) with the given posts.
  *
- * Options (Themixify → General → Reading):
- *   - postbar_position: 'bottom' (default) or 'top'.
- *   - postbar_count:    how many posts; 0/blank = all (capped at 200).
- *   - postbar_marquee:  auto-scroll right→left, looping seamlessly. The item
- *                       list is printed twice inside the moving inner strip so
- *                       the -50% keyframe loop never shows a gap; hover pauses.
+ * @param string    $position 'top' or 'bottom'.
+ * @param WP_Post[] $posts    Posts to show.
+ * @param bool      $marquee  Auto-scroll on/off.
+ * @param string    $label    Accessible label.
+ */
+function themify_postbar_print_bar( $position, array $posts, $marquee, $label ) {
+	if ( empty( $posts ) ) {
+		return;
+	}
+
+	$items = '';
+	foreach ( $posts as $post_item ) {
+		$items .= themify_postbar_item_html( $post_item ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the builder.
+	}
+
+	$classes = 'tf-postbar tf-postbar--' . ( 'top' === $position ? 'top' : 'bottom' ) . ( $marquee ? ' tf-postbar--marquee' : '' );
+	// Slow, steady pace: ~5s per item per half-loop, minimum 30s.
+	$duration = max( 30, count( $posts ) * 5 );
+
+	printf(
+		'<div class="%s" style="--tf-postbar-dur:%ds" aria-label="%s">',
+		esc_attr( $classes ),
+		(int) $duration,
+		esc_attr( $label )
+	);
+	echo '<div class="tf-postbar__track">';
+	if ( $marquee ) {
+		// Two copies back-to-back = seamless infinite loop.
+		echo '<div class="tf-postbar__inner">' . $items . $items . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput
+	} else {
+		echo $items; // phpcs:ignore WordPress.Security.EscapeOutput
+	}
+	echo '</div>';
+	echo '</div>';
+}
+
+/**
+ * Print the sticky bars in the footer (front-end only). main.js shows and
+ * hides them on scroll via the .is-visible class.
+ *
+ * Two bars, each with its own toggle (Themixify → General → Reading):
+ *   - TOP bar    → the most POPULAR posts (postbar_top_enabled).
+ *   - BOTTOM bar → the LATEST posts (postbar_bottom_enabled).
+ * Shared options: postbar_count (0/blank = all, capped 200) and
+ * postbar_marquee (seamless right→left auto-scroll, hover pauses).
  */
 function themify_postbar_render() {
 	if ( is_admin() || is_feed() || is_robots() || is_trackback() ) {
@@ -101,39 +150,25 @@ function themify_postbar_render() {
 
 	$count = (int) themify_get_option( 'postbar_count', 10 );
 	if ( $count <= 0 || $count > 200 ) {
-		$count = $count <= 0 ? 200 : 200; // 0/blank = every post (sane cap).
+		$count = 200; // 0/blank = every post (sane cap).
 	}
-	$position = 'top' === themify_get_option( 'postbar_position', 'bottom' ) ? 'top' : 'bottom';
-	$marquee  = themify_is_enabled( 'postbar_marquee', true );
+	$marquee = themify_is_enabled( 'postbar_marquee', true );
 
-	$posts = themify_postbar_posts( $count );
-	if ( empty( $posts ) ) {
-		return;
+	if ( themify_is_enabled( 'postbar_top_enabled', true ) ) {
+		themify_postbar_print_bar(
+			'top',
+			themify_postbar_posts( $count, 'popular' ),
+			$marquee,
+			__( 'Popular posts', 'themify' )
+		);
 	}
-
-	$items = '';
-	foreach ( $posts as $post_item ) {
-		$items .= themify_postbar_item_html( $post_item ); // phpcs:ignore WordPress.Security.EscapeOutput -- escaped in the builder.
+	if ( themify_is_enabled( 'postbar_bottom_enabled', true ) ) {
+		themify_postbar_print_bar(
+			'bottom',
+			themify_postbar_posts( $count, 'latest' ),
+			$marquee,
+			__( 'Latest posts', 'themify' )
+		);
 	}
-
-	$classes = 'tf-postbar tf-postbar--' . $position . ( $marquee ? ' tf-postbar--marquee' : '' );
-	// Slow, steady pace: ~5s per item per half-loop, minimum 30s.
-	$duration = max( 30, count( $posts ) * 5 );
-
-	printf(
-		'<div class="%s" style="--tf-postbar-dur:%ds" aria-label="%s">',
-		esc_attr( $classes ),
-		(int) $duration,
-		esc_attr__( 'Trending posts', 'themify' )
-	);
-	echo '<div class="tf-postbar__track">';
-	if ( $marquee ) {
-		// Two copies back-to-back = seamless infinite loop.
-		echo '<div class="tf-postbar__inner">' . $items . $items . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput
-	} else {
-		echo $items; // phpcs:ignore WordPress.Security.EscapeOutput
-	}
-	echo '</div>';
-	echo '</div>';
 }
 add_action( 'wp_footer', 'themify_postbar_render' );

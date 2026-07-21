@@ -318,15 +318,17 @@
 /* Sticky trending-posts bar — slides in after a little scrolling. */
 (function () {
 	function boot() {
-		var bar = document.querySelector('.tf-postbar');
-		if (!bar) { return; }
+		var bars = document.querySelectorAll('.tf-postbar');
+		if (!bars.length) { return; }
 		var shown = false;
 		function onScroll() {
 			var y = window.scrollY || document.documentElement.scrollTop || 0;
 			var v = y > 350;
 			if (v !== shown) {
 				shown = v;
-				bar.classList.toggle('is-visible', v);
+				for (var i = 0; i < bars.length; i++) {
+					bars[i].classList.toggle('is-visible', v);
+				}
 			}
 		}
 		window.addEventListener('scroll', onScroll, { passive: true });

@@ -199,15 +199,18 @@ function themify_general_settings_page() {
 						'desc'    => __( 'A slim bar of popular posts that slides in once the visitor scrolls.', 'themify' ),
 					),
 					array(
-						'key'     => 'postbar_position',
-						'label'   => __( 'Posts bar position', 'themify' ),
-						'type'    => 'select',
-						'default' => 'bottom',
-						'options' => array(
-							'bottom' => __( 'Bottom of the screen', 'themify' ),
-							'top'    => __( 'Top of the screen', 'themify' ),
-						),
-						'desc'    => __( 'Where the bar slides in from.', 'themify' ),
+						'key'     => 'postbar_top_enabled',
+						'label'   => __( 'Top bar — popular posts', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'A bar of your most popular posts slides down from the top on scroll.', 'themify' ),
+					),
+					array(
+						'key'     => 'postbar_bottom_enabled',
+						'label'   => __( 'Bottom bar — latest posts', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'A bar of your newest posts slides up from the bottom on scroll.', 'themify' ),
 					),
 					array(
 						'key'         => 'postbar_count',
