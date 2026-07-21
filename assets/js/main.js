@@ -314,3 +314,23 @@
 	}
 	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
 })();
+
+/* Sticky trending-posts bar — slides in after a little scrolling. */
+(function () {
+	function boot() {
+		var bar = document.querySelector('.tf-postbar');
+		if (!bar) { return; }
+		var shown = false;
+		function onScroll() {
+			var y = window.scrollY || document.documentElement.scrollTop || 0;
+			var v = y > 350;
+			if (v !== shown) {
+				shown = v;
+				bar.classList.toggle('is-visible', v);
+			}
+		}
+		window.addEventListener('scroll', onScroll, { passive: true });
+		onScroll();
+	}
+	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
+})();

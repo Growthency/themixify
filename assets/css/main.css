@@ -812,3 +812,32 @@ a.tf-postnav__item:hover .tf-postnav__title { color: var(--tf-accent); }
 .tf-similar__dots { display: flex; justify-content: center; gap: 8px; margin-top: 16px; }
 .tf-similar__dot { width: 9px; height: 9px; border-radius: 50%; border: none; padding: 0; background: #cbd2d9; cursor: pointer; transition: background 0.15s, transform 0.15s; }
 .tf-similar__dot.is-active { background: #14181c; transform: scale(1.15); }
+
+/* -------------------------------------------------------------------------
+ * Sticky trending-posts bar (Themixify → General → Sticky trending-posts bar)
+ * ---------------------------------------------------------------------- */
+.tf-postbar {
+	position: fixed; top: 0; left: 0; right: 0; z-index: 1200;
+	background: #fff; box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+	transform: translateY(-110%); transition: transform 0.28s ease;
+}
+.tf-postbar.is-visible { transform: translateY(0); }
+.tf-postbar__track {
+	display: flex; align-items: center; gap: 22px;
+	overflow-x: auto; padding: 9px 18px;
+	scrollbar-width: none; -ms-overflow-style: none;
+}
+.tf-postbar__track::-webkit-scrollbar { display: none; }
+.tf-postbar__item {
+	flex: 0 0 auto; display: flex; align-items: center; gap: 9px;
+	max-width: 215px; text-decoration: none;
+}
+.tf-postbar__item img {
+	width: 42px; height: 42px; object-fit: cover; border-radius: 4px;
+	flex: 0 0 auto; display: block;
+}
+.tf-postbar__title {
+	font-size: 0.82rem; line-height: 1.35; color: var(--tf-text, #1c2430);
+	display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.tf-postbar__item:hover .tf-postbar__title { color: var(--tf-accent); }

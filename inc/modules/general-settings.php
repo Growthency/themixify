@@ -178,6 +178,13 @@ function themify_general_settings_page() {
 						'desc'    => __( 'The sliding card carousel (arrows + dots) at the very end of every article.', 'themify' ),
 					),
 					array(
+						'key'     => 'sticky_postbar_enabled',
+						'label'   => __( 'Sticky trending-posts bar', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'A slim bar of 10 popular posts that slides down from the top once the visitor scrolls.', 'themify' ),
+					),
+					array(
 						'key'         => 'excerpt_length',
 						'label'       => __( 'Excerpt length (words)', 'themify' ),
 						'type'        => 'number',
