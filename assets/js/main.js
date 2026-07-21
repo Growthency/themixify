@@ -432,22 +432,31 @@
 		c = parseFloat(c) / 255;
 		return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
 	}
+	function parseBg(el) {
+		if (!el) { return null; }
+		var bg = getComputedStyle(el).backgroundColor || '';
+		var m = bg.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:[,\s]+([\d.]+))?\s*\)/);
+		if (!m) { return null; }
+		var a = m[4] === undefined ? 1 : parseFloat(m[4]);
+		return a >= 0.5 ? m : null;
+	}
 	function boot() {
 		var f = document.querySelector('.tf-site-footer');
 		if (!f) { return; }
-		var el = f, bg = null, m = null, a = 0;
-		// Walk up until we find a non-transparent background.
-		while (el && el !== document.documentElement) {
-			bg = getComputedStyle(el).backgroundColor || '';
-			m = bg.match(/rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:[,\s]+([\d.]+))?\s*\)/);
-			a = m ? (m[4] === undefined ? 1 : parseFloat(m[4])) : 0;
-			if (m && a >= 0.5) { break; }
-			m = null;
-			el = el.parentElement;
+		// The dark paint can sit on the footer itself, an inner container
+		// (Custom CSS often targets those) or an ancestor — check them all.
+		var m = parseBg(f.querySelector('.tf-footer-widgets'))
+			|| parseBg(f.querySelector('.tf-footer-bottom'))
+			|| parseBg(f);
+		if (!m) {
+			var el = f.parentElement;
+			while (el && el !== document.documentElement && !(m = parseBg(el))) {
+				el = el.parentElement;
+			}
 		}
 		if (!m) { return; }
 		var L = 0.2126 * lum(m[1]) + 0.7152 * lum(m[2]) + 0.0722 * lum(m[3]);
-		f.classList.toggle('tf-footer--dark', L < 0.35);
+		f.classList.toggle('tf-footer--dark', L < 0.4);
 	}
 	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
 })();
