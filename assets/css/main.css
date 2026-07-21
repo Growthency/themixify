@@ -906,3 +906,39 @@ body.tf-postbar-bottom-open .tf-share { bottom: 92px; }
 .tf-meta a { color: var(--tf-accent-ink); }
 .tf-meta a:hover { color: var(--tf-accent); }
 .tf-breadcrumbs a { color: var(--tf-accent-ink); }
+
+/* -------------------------------------------------------------------------
+ * WCAG AA, part 2 — footer links + solid buttons.
+ * ---------------------------------------------------------------------- */
+/* Fallback for older browsers: darkened accent (fine on light footers). */
+.tf-site-footer a:not(.tf-btn):not(.tf-youtube__btn) { color: var(--tf-accent-ink); }
+
+/* Modern browsers: footer text auto-flips to white on dark backgrounds and
+   black on light ones, whatever footer color the owner picks. */
+@supports (color: lch(from red calc((49 - l) * infinity) 0 0)) {
+	.tf-site-footer {
+		--tf-footer-ink: lch(from var(--tf-bg-secondary, #ffffff) calc((49.44 - l) * infinity) 0 0);
+		color: var(--tf-footer-ink);
+	}
+	.tf-site-footer a:not(.tf-btn):not(.tf-youtube__btn),
+	.tf-site-footer .widget-title,
+	.tf-footer-bottom { color: var(--tf-footer-ink); }
+	.tf-site-footer a:not(.tf-btn):not(.tf-youtube__btn):hover { text-decoration: underline; }
+}
+
+/* Solid buttons: white label needs >=4.5:1, so the fill is mixed ~14% darker.
+   Still reads as the same brand color; ghost/inverted variants untouched. */
+@supports (color: color-mix(in srgb, red 50%, black)) {
+	.tf-btn:not(.tf-btn--ghost), .wp-block-button__link, button.tf-btn {
+		background: color-mix(in srgb, var(--tf-btn) 84%, #000);
+	}
+	.tf-btn:not(.tf-btn--ghost):hover, .wp-block-button__link:hover {
+		background: color-mix(in srgb, var(--tf-btn-hover, var(--tf-btn)) 84%, #000);
+	}
+}
+.tf-cta-band__actions .tf-btn { background: #fff; color: var(--tf-accent-ink); }
+.tf-cta-band__actions .tf-btn:hover { background: rgba(255, 255, 255, 0.9); }
+
+/* YouTube subscribe: white on pure #ff0000 was 4.0:1 — deepen to pass. */
+.tf-youtube__btn:not(.tf-youtube__btn--ghost) { background: #c40000; box-shadow: 0 8px 22px rgba(196, 0, 0, 0.32); }
+.tf-youtube__btn:not(.tf-youtube__btn--ghost):hover { background: #a80000; }
