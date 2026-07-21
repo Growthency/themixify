@@ -243,6 +243,13 @@ function themify_general_settings_page() {
 				'desc'   => __( 'These switches drive the performance engine. The defaults target a 100/100 score; dial them back only if a plugin needs something they remove.', 'themify' ),
 				'fields' => array(
 					array(
+						'key'     => 'perf_inline_css',
+						'label'   => __( 'Inline all CSS (no render-blocking file)', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'Prints the whole stylesheet inside the page so the browser never waits on a CSS request. Best PageSpeed; turn off only if you prefer a cacheable CSS file.', 'themify' ),
+					),
+					array(
 						'key'     => 'perf_clean_head',
 						'label'   => __( 'Clean up <head>', 'themify' ),
 						'type'    => 'checkbox',

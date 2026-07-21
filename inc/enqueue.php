@@ -23,23 +23,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 function themify_enqueue_assets() {
 	$ver = THEMIFY_VERSION;
 
-	// Main stylesheet — the single source of truth for front-end styles.
-	wp_enqueue_style(
-		'themify-main',
-		THEMIFY_ASSETS . '/css/main.css',
-		array(),
-		$ver
-	);
+	// Main stylesheet. When "Inline CSS" (default) is on, the whole minified
+	// sheet is printed straight into <head> by themify_inline_full_css() and
+	// no render-blocking CSS file exists at all; the enqueue below is the
+	// fallback for owners who turn that off.
+	if ( ! themify_is_enabled( 'perf_inline_css', true ) ) {
+		wp_enqueue_style(
+			'themify-main',
+			THEMIFY_ASSETS . '/css/main.css',
+			array(),
+			$ver
+		);
 
-	// Brand color / typography overrides. These MUST be attached to the main
-	// stylesheet (not just inlined in the critical <head> block) so they print
-	// AFTER main.css and actually win the cascade — otherwise main.css's own
-	// :root defaults, loading later, would clobber the admin-chosen palette and
-	// saved colors would never show. Still render-blocking-in-head, so no flash.
-	if ( function_exists( 'themify_color_overrides_css' ) ) {
-		$overrides = themify_color_overrides_css();
-		if ( $overrides ) {
-			wp_add_inline_style( 'themify-main', $overrides );
+		// Brand color / typography overrides. These MUST be attached to the main
+		// stylesheet (not just inlined in the critical <head> block) so they print
+		// AFTER main.css and actually win the cascade — otherwise main.css's own
+		// :root defaults, loading later, would clobber the admin-chosen palette and
+		// saved colors would never show. Still render-blocking-in-head, so no flash.
+		if ( function_exists( 'themify_color_overrides_css' ) ) {
+			$overrides = themify_color_overrides_css();
+			if ( $overrides ) {
+				wp_add_inline_style( 'themify-main', $overrides );
+			}
 		}
 	}
 
@@ -111,6 +116,42 @@ CSS;
 	echo "<style id=\"themify-critical\">" . themify_minify_css( $css ) . "</style>\n";
 }
 add_action( 'wp_head', 'themify_critical_css', 1 );
+
+/**
+ * Print the ENTIRE main stylesheet inline in <head> (minified, cached in a
+ * transient keyed by version + file mtime). With no external CSS file there
+ * is zero render-blocking CSS and no request chain — the page paints from
+ * the very first response. ~12 KB gzipped; page caching makes it free.
+ *
+ * The owner's color overrides are appended AFTER the sheet so they win the
+ * cascade, exactly as wp_add_inline_style would have done.
+ */
+function themify_inline_full_css() {
+	if ( ! themify_is_enabled( 'perf_inline_css', true ) ) {
+		return;
+	}
+
+	$file = THEMIFY_DIR . '/assets/css/main.css';
+	$key  = 'themify_inline_css_' . THEMIFY_VERSION . '_' . (int) @filemtime( $file ); // phpcs:ignore WordPress.PHP.NoSilencedErrors.Discouraged
+
+	$css = get_transient( $key );
+	if ( false === $css ) {
+		$raw = is_readable( $file ) ? (string) file_get_contents( $file ) : ''; // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$css = '' !== $raw ? themify_minify_css( $raw ) : '';
+		set_transient( $key, $css, WEEK_IN_SECONDS );
+	}
+	if ( '' === $css ) {
+		return;
+	}
+
+	$overrides = function_exists( 'themify_color_overrides_css' ) ? (string) themify_color_overrides_css() : '';
+	if ( '' !== $overrides ) {
+		$css .= themify_minify_css( $overrides );
+	}
+
+	echo '<style id="themify-main-inline">' . $css . '</style>' . "\n"; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- theme-authored CSS, minified.
+}
+add_action( 'wp_head', 'themify_inline_full_css', 2 );
 
 /**
  * Ultra-light CSS minifier for inline blocks: strips comments and collapses
