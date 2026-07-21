@@ -474,6 +474,11 @@ function themify_share_page() {
 		'title' => __( 'Social Sharing', 'themify' ),
 		'intro' => __( 'Two share systems: a floating corner button for general pages, and rich in-article sharing on blog posts (buttons under the title, at the foot of the post, and a floating bar down the left side).', 'themify' ),
 		'nonce' => 'themify_share',
+		'after' => function () {
+			if ( function_exists( 'themify_imgshare_render_card' ) ) {
+				themify_imgshare_render_card();
+			}
+		},
 		'groups' => array(
 			array(
 				'title'  => __( 'In-article sharing (blog posts)', 'themify' ),

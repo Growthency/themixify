@@ -265,5 +265,10 @@ function themify_render_settings_page( array $config ) {
 	echo '<p class="tf-form__actions"><button type="submit" class="button button-primary button-hero">' . esc_html__( 'Save Changes', 'themify' ) . '</button></p>';
 	echo '</form>';
 
+	// Optional extra content (its own forms/cards) before the page closes.
+	if ( ! empty( $config['after'] ) && is_callable( $config['after'] ) ) {
+		call_user_func( $config['after'] );
+	}
+
 	themify_admin_footer();
 }
