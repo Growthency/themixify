@@ -28,7 +28,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 function themify_admin_header( $title, $subtitle = '' ) {
 	echo '<div class="wrap themify-admin">';
 	echo '<div class="themify-admin__head">';
-	echo '<div class="themify-admin__brand"><span class="themify-admin__logo">◆</span> Themixify</div>';
+	echo '<div class="themify-admin__brand"><span class="themify-admin__logo" style="display:inline-flex;vertical-align:-4px;margin-right:6px;">'
+		. '<svg width="20" height="20" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+		. '<defs><linearGradient id="tfxlogo" x1="6%" y1="4%" x2="94%" y2="96%">'
+		. '<stop offset="0%" stop-color="#b795f4"/><stop offset="42%" stop-color="#ee5f9d"/>'
+		. '<stop offset="78%" stop-color="#f79f45"/><stop offset="100%" stop-color="#fbc93d"/>'
+		. '</linearGradient></defs>'
+		. '<rect x="0" y="0" width="1024" height="1024" rx="234" fill="url(#tfxlogo)"/>'
+		. '<path d="M 300 738 L 300 348 L 512 600 L 724 348 L 724 738" fill="none" stroke="#fff" stroke-width="96" stroke-linecap="round" stroke-linejoin="round"/>'
+		. '<circle cx="724" cy="238" r="52" fill="#fff"/>'
+		. '</svg></span> Themixify <span style="opacity:.75;font-weight:600;text-transform:none;letter-spacing:0;">by <a href="https://www.writerify.org/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;">Writerify</a></span></div>';
 	echo '<h1 class="themify-admin__title">' . esc_html( $title ) . '</h1>';
 	if ( $subtitle ) {
 		echo '<p class="themify-admin__subtitle">' . wp_kses_post( $subtitle ) . '</p>';
