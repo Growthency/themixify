@@ -35,8 +35,9 @@ function themify_admin_header( $title, $subtitle = '' ) {
 		. '<stop offset="78%" stop-color="#f79f45"/><stop offset="100%" stop-color="#fbc93d"/>'
 		. '</linearGradient></defs>'
 		. '<rect x="0" y="0" width="1024" height="1024" rx="234" fill="url(#tfxlogo)"/>'
-		. '<path d="M 300 738 L 300 348 L 512 600 L 724 348 L 724 738" fill="none" stroke="#fff" stroke-width="96" stroke-linecap="round" stroke-linejoin="round"/>'
-		. '<circle cx="724" cy="238" r="52" fill="#fff"/>'
+		. '<path d="M 306 356 L 646 356" fill="none" stroke="#fff" stroke-width="98" stroke-linecap="round"/>'
+		. '<path d="M 476 356 L 476 742" fill="none" stroke="#fff" stroke-width="98" stroke-linecap="round"/>'
+		. '<circle cx="756" cy="300" r="54" fill="#fff"/>'
 		. '</svg></span> Themixify <span style="opacity:.75;font-weight:600;text-transform:none;letter-spacing:0;">by <a href="https://www.writerify.org/" target="_blank" rel="noopener noreferrer" style="color:#fff;text-decoration:underline;">Writerify</a></span></div>';
 	echo '<h1 class="themify-admin__title">' . esc_html( $title ) . '</h1>';
 	if ( $subtitle ) {
