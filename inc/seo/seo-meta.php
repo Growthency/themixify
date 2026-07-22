@@ -819,6 +819,26 @@ function themify_seo_settings_page() {
 				),
 			),
 			array(
+				'title'  => __( 'XML sitemap', 'themify' ),
+				'desc'   => __( 'Themixify\'s own styled sitemap — one file, paginated with Previous/Next, instead of dozens of sitemap parts.', 'themify' ),
+				'fields' => array(
+					array(
+						'key'     => 'sitemap_custom_enabled',
+						'label'   => __( 'Pretty paginated XML sitemap', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'Serves a styled sitemap at /sitemap.xml with Previous/Next pages, plus /sitemap_index.xml for search engines (robots.txt and the Search Console submit follow automatically). Turn OFF to fall back to the plain WordPress core sitemap.', 'themify' ),
+					),
+					array(
+						'key'     => 'sitemap_per_page',
+						'label'   => __( 'URLs per sitemap page', 'themify' ),
+						'type'    => 'number',
+						'default' => 200,
+						'desc'    => __( 'How many links each page lists (50–1000).', 'themify' ),
+					),
+				),
+			),
+			array(
 				'title'  => __( 'Site verification', 'themify' ),
 				'desc'   => __( 'Paste the verification code (or the full meta tag) from each service to prove ownership.', 'themify' ),
 				'fields' => array(

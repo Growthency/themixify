@@ -61,6 +61,13 @@ add_filter( 'wp_sitemaps_enabled', 'themify_sitemaps_enabled', 99 );
  * @return string Absolute sitemap URL.
  */
 function themify_sitemap_url() {
+	// The theme's own pretty, paginated sitemap takes over when enabled
+	// (Themixify → SEO → XML sitemap) — robots.txt, the Search Console
+	// submit button and SEO Health all follow automatically.
+	if ( function_exists( 'themify_xsm_enabled' ) && themify_xsm_enabled() ) {
+		return home_url( '/sitemap_index.xml' );
+	}
+
 	if ( function_exists( 'wp_sitemaps_get_server' ) ) {
 		$server = wp_sitemaps_get_server();
 		if ( $server && method_exists( $server, 'index' ) ) {
