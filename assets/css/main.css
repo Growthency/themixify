@@ -912,6 +912,12 @@ a.tf-postnav__item:hover .tf-postnav__title { color: var(--tf-accent); }
 body.tf-postbar-bottom-open .tf-back-to-top,
 body.tf-postbar-bottom-open .tf-share { bottom: 92px; }
 
+/* The footer lifts above the open bottom bar too — same trick as the buttons:
+   extra bottom padding on the footer while the bar is open, back to normal
+   when it hides (smooth both ways). */
+.tf-site-footer { transition: padding-bottom 0.28s ease; }
+body.tf-postbar-bottom-open .tf-site-footer { padding-bottom: 84px; }
+
 /* -------------------------------------------------------------------------
  * Accessible color contrast (WCAG AA) — auto-darkened accent for text uses.
  * The accent stays the brand color for buttons/fills; for TEXT on white or
