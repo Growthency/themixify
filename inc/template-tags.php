@@ -207,7 +207,8 @@ function themify_build_toc( $content, $min = 3 ) {
 	}
 
 	$toc  = '<nav class="tf-toc" aria-label="' . esc_attr__( 'Table of contents', 'themify' ) . '">';
-	$toc .= '<button class="tf-toc__toggle" aria-expanded="true"><span class="tf-toc__label">' . esc_html__( 'Table of Contents', 'themify' ) . '</span><span class="tf-toc__caret" aria-hidden="true"></span></button><ol>';
+	// Collapsed by default — readers who want it click the header to open it.
+	$toc .= '<button class="tf-toc__toggle" aria-expanded="false"><span class="tf-toc__label">' . esc_html__( 'Table of Contents', 'themify' ) . '</span><span class="tf-toc__caret" aria-hidden="true"></span></button><ol style="display:none">';
 	foreach ( $toc_items as $item ) {
 		$toc .= sprintf(
 			'<li class="tf-toc__l%d"><a href="#%s">%s</a></li>',

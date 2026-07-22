@@ -192,6 +192,20 @@ function themify_general_settings_page() {
 						'desc'    => __( 'The sliding card carousel (arrows + dots) at the very end of every article.', 'themify' ),
 					),
 					array(
+						'key'     => 'autoload_next_enabled',
+						'label'   => __( 'Auto-load next post (infinite reading)', 'themify' ),
+						'type'    => 'checkbox',
+						'default' => '1',
+						'desc'    => __( 'When a reader reaches the end of an article, the next post loads automatically below it — endless reading that keeps visitors on the site.', 'themify' ),
+					),
+					array(
+						'key'     => 'autoload_next_max',
+						'label'   => __( 'Max auto-loaded posts', 'themify' ),
+						'type'    => 'number',
+						'default' => 3,
+						'desc'    => __( 'How many extra posts may load one after another before it stops (1–10).', 'themify' ),
+					),
+					array(
 						'key'     => 'sticky_postbar_enabled',
 						'label'   => __( 'Sticky trending-posts bar', 'themify' ),
 						'type'    => 'checkbox',

@@ -210,19 +210,20 @@
 
 	/* ---- TOC toggle + scrollspy ---- */
 	function toc() {
+		// One delegated listener drives every TOC on the page — including the
+		// articles appended later by the auto-load-next-post feature.
+		document.addEventListener( 'click', function ( e ) {
+			var toggle = e.target.closest ? e.target.closest( '.tf-toc__toggle' ) : null;
+			if ( ! toggle ) { return; }
+			var box      = toggle.closest( '.tf-toc' );
+			var expanded = toggle.getAttribute( 'aria-expanded' ) !== 'false';
+			toggle.setAttribute( 'aria-expanded', expanded ? 'false' : 'true' );
+			var list = box ? box.querySelector( 'ol' ) : null;
+			if ( list ) { list.style.display = expanded ? 'none' : ''; }
+		} );
+
 		var nav = document.querySelector( '.tf-toc' );
 		if ( ! nav ) { return; }
-
-		var toggle = nav.querySelector( '.tf-toc__toggle' );
-		if ( toggle ) {
-			toggle.addEventListener( 'click', function () {
-				var expanded = toggle.getAttribute( 'aria-expanded' ) !== 'false';
-				toggle.setAttribute( 'aria-expanded', expanded ? 'false' : 'true' );
-				nav.hidden = false;
-				var list = nav.querySelector( 'ol' );
-				if ( list ) { list.style.display = expanded ? 'none' : ''; }
-			} );
-		}
 
 		var links = Array.prototype.slice.call( nav.querySelectorAll( 'a[href^="#"]' ) );
 		if ( ! links.length || ! ( 'IntersectionObserver' in window ) ) { return; }
@@ -421,6 +422,99 @@
 		holder.appendChild(btns);
 	}
 
+	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
+
+	// Articles appended by auto-load-next get their share buttons too.
+	document.addEventListener('themify:appended', function (e) {
+		var cfg = window.tfImgShare;
+		if (!cfg || !cfg.networks || !cfg.networks.length || !e.detail || !e.detail.root) { return; }
+		var imgs = e.detail.root.querySelectorAll('img');
+		for (var i = 0; i < imgs.length; i++) { wrap(imgs[i], cfg); }
+	});
+})();
+
+/* Auto-load next post — infinite reading. When the reader nears the end of
+   the article the next post is fetched and appended below it. Config comes
+   from inc/modules/auto-load-post.php; toggle under Themixify → General. */
+(function () {
+	function boot() {
+		var cfg     = window.themifyAutoload;
+		var article = document.querySelector('article.tf-article');
+		if (!cfg || !cfg.queue || !cfg.queue.length || !article || !('IntersectionObserver' in window) || !window.fetch) { return; }
+
+		var parent = article.parentNode;
+		var index  = 0;
+		var busy   = false;
+
+		var status = document.createElement('div');
+		status.className   = 'tf-autoload-status';
+		status.textContent = cfg.loading || 'Loading…';
+		status.hidden      = true;
+
+		var sentinel = document.createElement('div');
+		sentinel.className = 'tf-autoload-sentinel';
+		parent.appendChild(status);
+		parent.appendChild(sentinel);
+
+		var io = new IntersectionObserver(function (entries) {
+			for (var i = 0; i < entries.length; i++) {
+				if (entries[i].isIntersecting) { load(); break; }
+			}
+		}, { rootMargin: '900px 0px' });
+		io.observe(sentinel);
+
+		function stop() {
+			io.disconnect();
+			status.remove();
+			sentinel.remove();
+		}
+
+		function load() {
+			if (busy) { return; }
+			if (index >= cfg.queue.length) { stop(); return; }
+			busy = true;
+			status.hidden = false;
+			var url = cfg.queue[index++];
+
+			fetch(url, { credentials: 'same-origin' })
+				.then(function (r) { return r.text(); })
+				.then(function (html) {
+					var doc  = new DOMParser().parseFromString(html, 'text/html');
+					var next = doc.querySelector('article.tf-article');
+					status.hidden = true;
+					busy = false;
+					if (!next) { return; }
+
+					// Comment forms cannot repeat on one page (duplicate ids).
+					var strip = next.querySelectorAll('#comments, .comments-area, #respond, .comment-respond');
+					for (var i = 0; i < strip.length; i++) { strip[i].remove(); }
+
+					var divider = document.createElement('div');
+					divider.className = 'tf-autoload-divider';
+					var label = document.createElement('span');
+					label.textContent = cfg.divider || 'Continue Reading';
+					divider.appendChild(label);
+
+					var imported = document.importNode(next, true);
+					parent.insertBefore(divider, status);
+					parent.insertBefore(imported, status);
+
+					// The address bar and tab title follow the reader.
+					try {
+						history.replaceState(null, '', url);
+						if (doc.title) { document.title = doc.title; }
+					} catch (e) {}
+
+					document.dispatchEvent(new CustomEvent('themify:appended', { detail: { root: imported } }));
+
+					if (index >= cfg.queue.length) { stop(); }
+				})
+				.catch(function () {
+					busy = false;
+					status.hidden = true;
+				});
+		}
+	}
 	if (document.readyState !== 'loading') { boot(); } else { document.addEventListener('DOMContentLoaded', boot); }
 })();
 

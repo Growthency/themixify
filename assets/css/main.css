@@ -973,3 +973,22 @@ body.tf-postbar-bottom-open .tf-share { bottom: 92px; }
 .tf-site-footer.tf-footer--dark .tf-footer-bottom { color: #ffffff; }
 .tf-site-footer.tf-footer--dark a:not(.tf-btn):not(.tf-youtube__btn) { color: rgba(255, 255, 255, 0.92); }
 .tf-site-footer.tf-footer--dark a:not(.tf-btn):not(.tf-youtube__btn):hover { color: #ffffff; text-decoration: underline; }
+
+/* -------------------------------------------------------------------------
+ * Auto-load next post (infinite reading) — divider + loading spinner
+ * ---------------------------------------------------------------------- */
+.tf-autoload-divider {
+	display: flex; align-items: center; gap: 14px; margin: 38px 0 30px;
+	color: var(--tf-text-muted); font-weight: 700; text-transform: uppercase;
+	letter-spacing: 2px; font-size: 0.82rem;
+}
+.tf-autoload-divider::before, .tf-autoload-divider::after {
+	content: ""; flex: 1; height: 2px; background: var(--tf-border); border-radius: 2px;
+}
+.tf-autoload-status { margin: 18px 0; text-align: center; color: var(--tf-text-muted); font-size: 0.95rem; }
+.tf-autoload-status::before {
+	content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 9px;
+	vertical-align: -3px; border: 2px solid var(--tf-accent); border-right-color: transparent;
+	border-radius: 50%; animation: tfAutoloadSpin 0.8s linear infinite;
+}
+@keyframes tfAutoloadSpin { to { transform: rotate(360deg); } }
