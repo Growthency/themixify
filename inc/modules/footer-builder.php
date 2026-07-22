@@ -461,16 +461,6 @@ function themify_render_footer_bottom() {
 		wp_kses_post( themify_footer_copyright_text() )
 	);
 
-	if ( has_nav_menu( 'footer' ) ) {
-		wp_nav_menu( array(
-			'theme_location' => 'footer',
-			'container'      => false,
-			'menu_class'     => 'tf-footer-menu',
-			'depth'          => 1,
-			'fallback_cb'    => false,
-		) );
-	}
-
 	echo '</div>'; // .tf-footer-bottom__left
 
 	// ---- Right: social icons + payment badges. ----

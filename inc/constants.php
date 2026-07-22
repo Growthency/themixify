@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /** Bumped on every release; used to cache-bust enqueued assets. */
-define( 'THEMIFY_VERSION', '1.12.5' );
+define( 'THEMIFY_VERSION', '1.12.6' );
 
 /** Absolute filesystem path to the theme root, no trailing slash. */
 define( 'THEMIFY_DIR', get_template_directory() );

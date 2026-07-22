@@ -41,7 +41,6 @@ function themify_setup() {
 
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu (Header)', 'themify' ),
-		'footer'  => __( 'Footer Menu', 'themify' ),
 	) );
 
 	// Responsive, sensibly-cropped thumbnails used across the blog grid.
